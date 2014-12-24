@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C2DF9E71A49F85F005E6547 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C2DF9E61A49F85F005E6547 /* main.cpp */; };
+		2C8E86F61A4B44E000620501 /* Item.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C8E86F41A4B44E000620501 /* Item.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		2C2DF9E31A49F85F005E6547 /* WoWDataDownloader */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WoWDataDownloader; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C2DF9E61A49F85F005E6547 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		2C8E86F41A4B44E000620501 /* Item.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Item.cpp; sourceTree = "<group>"; };
+		2C8E86F51A4B44E000620501 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +60,19 @@
 		2C2DF9E51A49F85F005E6547 /* WoWDataDownloader */ = {
 			isa = PBXGroup;
 			children = (
+				2C8E86F21A4B444700620501 /* Entities */,
 				2C2DF9E61A49F85F005E6547 /* main.cpp */,
 			);
 			path = WoWDataDownloader;
+			sourceTree = "<group>";
+		};
+		2C8E86F21A4B444700620501 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				2C8E86F41A4B44E000620501 /* Item.cpp */,
+				2C8E86F51A4B44E000620501 /* Item.h */,
+			);
+			name = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,6 +131,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C8E86F61A4B44E000620501 /* Item.cpp in Sources */,
 				2C2DF9E71A49F85F005E6547 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,6 +246,7 @@
 				2C2DF9EC1A49F85F005E6547 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
