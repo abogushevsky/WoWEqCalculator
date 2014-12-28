@@ -239,3 +239,9 @@ pip-log.txt
 .mr.developer.cfg
 
 
+
+*.xcbkptlist
+
+*.xcuserstate
+
+*.xcuserstate
