@@ -12,10 +12,17 @@
 #include <stdio.h>
 #include <string>
 
+enum RealmPopulations { low, medium, hight };
+enum RealmTypes { pve, rpve, pvp, rpvp };
+
+//Class represent a WoW realm realm info with it's current status
 struct Realm {
     std::string id;
     std::string locale;
     std::string name;
+    std::string timezone;
+    RealmTypes type;
+    RealmPopulations population;
 };
 
 #endif /* defined(__WoWDataDownloader__Realm__) */
