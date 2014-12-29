@@ -9,8 +9,6 @@
 #ifndef __WoWDataDownloader__Item__
 #define __WoWDataDownloader__Item__
 
-#include <stdio.h>
-
 struct Item {
     
 };

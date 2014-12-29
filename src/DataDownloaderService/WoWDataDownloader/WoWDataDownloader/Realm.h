@@ -9,7 +9,6 @@
 #ifndef __WoWDataDownloader__Realm__
 #define __WoWDataDownloader__Realm__
 
-#include <stdio.h>
 #include <string>
 
 enum class RealmPopulations { low, medium, hight };
