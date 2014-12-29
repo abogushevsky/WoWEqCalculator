@@ -12,8 +12,8 @@
 #include <stdio.h>
 #include <string>
 
-enum RealmPopulations { low, medium, hight };
-enum RealmTypes { pve, rpve, pvp, rpvp };
+enum class RealmPopulations { low, medium, hight };
+enum class RealmTypes { pve, rpve, pvp, rpvp };
 
 //Class represent a WoW realm realm info with it's current status
 struct Realm {
