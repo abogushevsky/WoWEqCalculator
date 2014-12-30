@@ -11,8 +11,12 @@
 
 #include <vector>
 #include "IDataLoader.h"
+#include "RestClient.h"
 
 class BNetApiDataLoader : public IDataLoader {
+private:
+    RestClient _restClient;
+    
 public:
     ~BNetApiDataLoader() {};
     BNetApiDataLoader() {};

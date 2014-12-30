@@ -7,11 +7,17 @@
 //
 
 #include <iostream>
+#include <boost/asio.hpp>
 #include "BNetApiDataLoader.h"
+
+using namespace boost;
+using namespace boost::asio;
+using namespace std;
 
 IDataLoader::~IDataLoader() {};
 
-std::vector<Realm> IDataLoader::loadRealms() {
-    std::cout << "This is BNetApiDataLoader" << std::endl;
-    return std::vector<Realm>(0);
+vector<Realm> IDataLoader::loadRealms() {
+    cout << "This is BNetApiDataLoader" << endl;
+    
+    return vector<Realm>(0);
 }
