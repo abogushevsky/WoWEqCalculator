@@ -35,6 +35,7 @@
 		2C619DBD1A5328F7006C1222 /* libboost_system.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_system.dylib; path = ../../../../../Development/CPP/libs/lib/libboost_system.dylib; sourceTree = "<group>"; };
 		2C619DC11A5329D0006C1222 /* RestClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RestClient.cpp; sourceTree = "<group>"; };
 		2C619DC21A5329D0006C1222 /* RestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestClient.h; sourceTree = "<group>"; };
+		2C619DC41A532B0B006C1222 /* IWebClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IWebClient.h; sourceTree = "<group>"; };
 		2C8E86F41A4B44E000620501 /* Item.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Item.cpp; sourceTree = "<group>"; };
 		2C8E86F51A4B44E000620501 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		2C97184C1A51EBE0004ECF9B /* IDataLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDataLoader.h; sourceTree = "<group>"; };
@@ -78,7 +79,6 @@
 		2C2DF9E51A49F85F005E6547 /* WoWDataDownloader */ = {
 			isa = PBXGroup;
 			children = (
-				2C619DC01A5329BA006C1222 /* Net */,
 				2C869B9A1A51ECF3004E4722 /* Impl */,
 				2C97184B1A51DC23004ECF9B /* Abstractions */,
 				2C8E86F21A4B444700620501 /* Entities */,
@@ -87,18 +87,11 @@
 			path = WoWDataDownloader;
 			sourceTree = "<group>";
 		};
-		2C619DC01A5329BA006C1222 /* Net */ = {
+		2C869B9A1A51ECF3004E4722 /* Impl */ = {
 			isa = PBXGroup;
 			children = (
 				2C619DC11A5329D0006C1222 /* RestClient.cpp */,
 				2C619DC21A5329D0006C1222 /* RestClient.h */,
-			);
-			name = Net;
-			sourceTree = "<group>";
-		};
-		2C869B9A1A51ECF3004E4722 /* Impl */ = {
-			isa = PBXGroup;
-			children = (
 				2CDD47DA1A51EE85008F1097 /* BNetApiDataLoader.cpp */,
 				2CDD47DB1A51EE85008F1097 /* BNetApiDataLoader.h */,
 			);
@@ -120,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				2C97184C1A51EBE0004ECF9B /* IDataLoader.h */,
+				2C619DC41A532B0B006C1222 /* IWebClient.h */,
 			);
 			name = Abstractions;
 			sourceTree = "<group>";

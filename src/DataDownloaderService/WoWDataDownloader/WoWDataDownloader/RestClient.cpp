@@ -6,12 +6,15 @@
 //  Copyright (c) 2014 Anton Bogushevsky. All rights reserved.
 //
 
-#include <string>
 #include "RestClient.h"
 
 using namespace std;
 
-string RestClient::get(std::string url) {
+IWebClient::~IWebClient() {
+    
+}
+
+string IWebClient::get(string url) {
     return "";
 }
 

@@ -9,11 +9,12 @@
 #ifndef __WoWDataDownloader__RestClient__
 #define __WoWDataDownloader__RestClient__
 
-#include <string>
+#include "IWebClient.h"
 
-class RestClient {
+class RestClient : public IWebClient {
 public:
-    std::string get(std::string url);
+    ~RestClient() {};
+    RestClient() {};
 };
 
 #endif /* defined(__WoWDataDownloader__RestClient__) */
