@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2C2DF9E71A49F85F005E6547 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C2DF9E61A49F85F005E6547 /* main.cpp */; };
+		2C619DBE1A5328F7006C1222 /* libboost_regex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C619DBC1A5328F7006C1222 /* libboost_regex.dylib */; };
+		2C619DBF1A5328F7006C1222 /* libboost_system.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C619DBD1A5328F7006C1222 /* libboost_system.dylib */; };
 		2C8E86F61A4B44E000620501 /* Item.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C8E86F41A4B44E000620501 /* Item.cpp */; };
 		2CB2BBF01A5058D800E1EDE3 /* Realm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CB2BBEE1A5058D800E1EDE3 /* Realm.cpp */; };
 		2CDD47DC1A51EE85008F1097 /* BNetApiDataLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CDD47DA1A51EE85008F1097 /* BNetApiDataLoader.cpp */; };
@@ -28,6 +30,8 @@
 /* Begin PBXFileReference section */
 		2C2DF9E31A49F85F005E6547 /* WoWDataDownloader */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WoWDataDownloader; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C2DF9E61A49F85F005E6547 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		2C619DBC1A5328F7006C1222 /* libboost_regex.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_regex.dylib; path = ../../../../../Development/CPP/libs/lib/libboost_regex.dylib; sourceTree = "<group>"; };
+		2C619DBD1A5328F7006C1222 /* libboost_system.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_system.dylib; path = ../../../../../Development/CPP/libs/lib/libboost_system.dylib; sourceTree = "<group>"; };
 		2C8E86F41A4B44E000620501 /* Item.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Item.cpp; sourceTree = "<group>"; };
 		2C8E86F51A4B44E000620501 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		2C97184C1A51EBE0004ECF9B /* IDataLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDataLoader.h; sourceTree = "<group>"; };
@@ -42,6 +46,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C619DBE1A5328F7006C1222 /* libboost_regex.dylib in Frameworks */,
+				2C619DBF1A5328F7006C1222 /* libboost_system.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +57,8 @@
 		2C2DF9DA1A49F85F005E6547 = {
 			isa = PBXGroup;
 			children = (
+				2C619DBC1A5328F7006C1222 /* libboost_regex.dylib */,
+				2C619DBD1A5328F7006C1222 /* libboost_system.dylib */,
 				2C2DF9E51A49F85F005E6547 /* WoWDataDownloader */,
 				2C2DF9E41A49F85F005E6547 /* Products */,
 			);
@@ -246,6 +254,15 @@
 		2C2DF9EB1A49F85F005E6547 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/Users/NamelessOne/Development/CPP/libs/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/NamelessOne/Development/CPP/libs/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -253,6 +270,15 @@
 		2C2DF9EC1A49F85F005E6547 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/Users/NamelessOne/Development/CPP/libs/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/NamelessOne/Development/CPP/libs/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
