@@ -21,3 +21,11 @@ vector<Realm> IDataLoader::loadRealms() {
     
     return vector<Realm>(0);
 }
+
+BNetApiDataLoader::BNetApiDataLoader(IWebClient *webClient) {
+    if (!webClient) {
+        throw std::invalid_argument("webClient");
+    }
+    
+    this->_webClient = webClient;
+}

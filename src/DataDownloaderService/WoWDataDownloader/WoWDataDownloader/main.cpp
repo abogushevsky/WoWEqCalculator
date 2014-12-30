@@ -11,6 +11,7 @@
 #include "Realm.h"
 #include "IDataLoader.h"
 #include "BNetApiDataLoader.h"
+#include "RestClient.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -25,7 +26,7 @@ int main(int argc, const char * argv[]) {
         RealmPopulations::low
     };
     
-    IDataLoader *loader = new BNetApiDataLoader();
+    IDataLoader *loader = new BNetApiDataLoader(new RestClient());
     loader->loadRealms();
     
     return 0;

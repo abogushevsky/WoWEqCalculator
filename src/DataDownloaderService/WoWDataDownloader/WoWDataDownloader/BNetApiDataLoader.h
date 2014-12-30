@@ -11,15 +11,15 @@
 
 #include <vector>
 #include "IDataLoader.h"
-#include "RestClient.h"
+#include "IWebClient.h"
 
 class BNetApiDataLoader : public IDataLoader {
 private:
-    RestClient _restClient;
+    IWebClient *_webClient;
     
 public:
     ~BNetApiDataLoader() {};
-    BNetApiDataLoader() {};
+    BNetApiDataLoader(IWebClient *webClient);
 };
 
 #endif /* defined(__WoWDataDownloader__BNetApiDataLoader__) */
