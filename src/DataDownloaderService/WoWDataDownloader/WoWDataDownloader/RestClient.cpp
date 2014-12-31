@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include <string>
 #include "RestClient.h"
 #include <boost/asio.hpp>
 
@@ -19,6 +20,13 @@ IWebClient::~IWebClient() {
 }
 
 string IWebClient::get(string url) {
+    string path;
+    long firstSlashIndex = url.find('/');
+    if (firstSlashIndex >= 0) {
+        path = url.substr(firstSlashIndex);
+        url = url.substr(0, firstSlashIndex);
+    }
+    
     cout << "Requesting: " << url << endl;
     io_service service;
     ip::tcp::resolver resolver(service);
@@ -44,7 +52,7 @@ string IWebClient::get(string url) {
     
     boost::asio::streambuf request;
     ostream request_stream(&request);
-    request_stream << "GET " << url << " HTTP/1.1\r\n";
+    request_stream << "GET " << path << " HTTP/1.1\r\n";
     request_stream << "Host: " << url << "\r\n";
     request_stream << "Accept: */*\r\n";
     request_stream << "Connection: close\r\n\r\n";
@@ -55,7 +63,22 @@ string IWebClient::get(string url) {
     // Read the response status line.
     boost::asio::streambuf response;
     boost::asio::read_until(socket, response, "\r\n");
-    cout << &response;
+    // Check that response is OK.
+    istream response_stream(&response);
+    string http_version;
+    response_stream >> http_version;
+    unsigned int status_code;
+    response_stream >> status_code;
+    string status_message;
+    getline(response_stream, status_message);
+    if (!response_stream || http_version.substr(0, 5) != "HTTP/")
+    {
+        cout << "Invalid response\n";
+    }
+    if (status_code != 200)
+    {
+        cout << "Response returned with status code " << status_code << "\n";
+    }
     
     return "";
 }

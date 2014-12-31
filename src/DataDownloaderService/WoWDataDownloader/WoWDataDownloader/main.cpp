@@ -27,7 +27,7 @@ int main(int argc, const char * argv[]) {
     };
     
     IWebClient *client = new RestClient();
-    client->get("www.yahoo.com");
+    client->get("eu.battle.net/api/wow/realm/status");
     delete client;
     
     //IDataLoader *loader = new BNetApiDataLoader(new RestClient());
