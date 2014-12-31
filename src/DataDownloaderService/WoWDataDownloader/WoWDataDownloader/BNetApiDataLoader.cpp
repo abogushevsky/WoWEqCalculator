@@ -7,11 +7,8 @@
 //
 
 #include <iostream>
-#include <boost/asio.hpp>
 #include "BNetApiDataLoader.h"
 
-using namespace boost;
-using namespace boost::asio;
 using namespace std;
 
 IDataLoader::~IDataLoader() {};

@@ -26,8 +26,12 @@ int main(int argc, const char * argv[]) {
         RealmPopulations::low
     };
     
-    IDataLoader *loader = new BNetApiDataLoader(new RestClient());
-    loader->loadRealms();
+    IWebClient *client = new RestClient();
+    client->get("www.yahoo.com");
+    delete client;
+    
+    //IDataLoader *loader = new BNetApiDataLoader(new RestClient());
+    //loader->loadRealms();
     
     return 0;
 }
