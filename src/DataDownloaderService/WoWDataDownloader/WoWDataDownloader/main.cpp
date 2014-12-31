@@ -27,7 +27,12 @@ int main(int argc, const char * argv[]) {
     };
     
     IWebClient *client = new RestClient();
-    client->get("eu.battle.net/api/wow/realm/status");
+    std::string *requestResult = client->get("eu.battle.net/api/wow/realm/status");
+    if (requestResult) {
+        std::cout << "RESULT: " << *requestResult;
+    }
+    
+    delete requestResult;
     delete client;
     
     //IDataLoader *loader = new BNetApiDataLoader(new RestClient());

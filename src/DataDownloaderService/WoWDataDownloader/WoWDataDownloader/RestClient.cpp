@@ -19,7 +19,7 @@ IWebClient::~IWebClient() {
     
 }
 
-string IWebClient::get(string url) {
+string* IWebClient::get(string url) {
     string path;
     long firstSlashIndex = url.find('/');
     if (firstSlashIndex >= 0) {
@@ -80,7 +80,27 @@ string IWebClient::get(string url) {
         cout << "Response returned with status code " << status_code << "\n";
     }
     
-    return "";
+    // Read the response headers, which are terminated by a blank line.
+    boost::asio::read_until(socket, response, "\r\n\r\n");
+    
+    // Process the response headers.
+    string header;
+    while (getline(response_stream, header) && header != "\r")
+        cout << header << "\n";
+    cout << "\n";
+    
+    // Write whatever content we already have to output.
+    if (response.size() > 0)
+        cout << &response;
+    
+    // Read until EOF, writing data to output as we go.
+    while (boost::asio::read(socket, response,
+                             boost::asio::transfer_at_least(1), error))
+        cout << &response;
+    if (error != boost::asio::error::eof)
+        throw boost::system::system_error(error);
+    
+    return new string((std::istreambuf_iterator<char>(&response)), std::istreambuf_iterator<char>());
 }
 
 
