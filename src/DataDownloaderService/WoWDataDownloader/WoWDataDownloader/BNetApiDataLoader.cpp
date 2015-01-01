@@ -14,7 +14,12 @@ using namespace std;
 IDataLoader::~IDataLoader() {};
 
 vector<Realm> IDataLoader::loadRealms() {
-    cout << "This is BNetApiDataLoader" << endl;
+    string *realmsJson = this->_webClient->get(REALMS_LIST_URL);
+    
+    if (realmsJson) {
+        //parse & save to mongo
+        delete (realmsJson);
+    }
     
     return vector<Realm>(0);
 }

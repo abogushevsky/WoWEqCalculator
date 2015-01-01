@@ -15,6 +15,7 @@
 
 class BNetApiDataLoader : public IDataLoader {
 private:
+    const std::string REALMS_LIST_URL = "eu.battle.net/api/wow/realm/status";
     IWebClient *_webClient;
     
 public:
