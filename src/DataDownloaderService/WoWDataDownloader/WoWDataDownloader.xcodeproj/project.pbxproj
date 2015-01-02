@@ -14,6 +14,7 @@
 		2C8E86F61A4B44E000620501 /* Item.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C8E86F41A4B44E000620501 /* Item.cpp */; };
 		2CB2BBF01A5058D800E1EDE3 /* Realm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CB2BBEE1A5058D800E1EDE3 /* Realm.cpp */; };
 		2CDD47DC1A51EE85008F1097 /* BNetApiDataLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CDD47DA1A51EE85008F1097 /* BNetApiDataLoader.cpp */; };
+		E66656231A571BB800DA71AF /* JsonParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E66656211A571BB800DA71AF /* JsonParser.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +44,8 @@
 		2CB2BBEF1A5058D800E1EDE3 /* Realm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Realm.h; sourceTree = "<group>"; };
 		2CDD47DA1A51EE85008F1097 /* BNetApiDataLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BNetApiDataLoader.cpp; sourceTree = "<group>"; };
 		2CDD47DB1A51EE85008F1097 /* BNetApiDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNetApiDataLoader.h; sourceTree = "<group>"; };
+		E66656211A571BB800DA71AF /* JsonParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JsonParser.cpp; sourceTree = "<group>"; };
+		E66656221A571BB800DA71AF /* JsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonParser.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,7 @@
 		2C2DF9E51A49F85F005E6547 /* WoWDataDownloader */ = {
 			isa = PBXGroup;
 			children = (
+				E66656201A571B8500DA71AF /* Json */,
 				2C869B9A1A51ECF3004E4722 /* Impl */,
 				2C97184B1A51DC23004ECF9B /* Abstractions */,
 				2C8E86F21A4B444700620501 /* Entities */,
@@ -116,6 +120,15 @@
 				2C619DC41A532B0B006C1222 /* IWebClient.h */,
 			);
 			name = Abstractions;
+			sourceTree = "<group>";
+		};
+		E66656201A571B8500DA71AF /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				E66656211A571BB800DA71AF /* JsonParser.cpp */,
+				E66656221A571BB800DA71AF /* JsonParser.h */,
+			);
+			name = Json;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +189,7 @@
 			files = (
 				2C619DC31A5329D0006C1222 /* RestClient.cpp in Sources */,
 				2C8E86F61A4B44E000620501 /* Item.cpp in Sources */,
+				E66656231A571BB800DA71AF /* JsonParser.cpp in Sources */,
 				2C2DF9E71A49F85F005E6547 /* main.cpp in Sources */,
 				2CDD47DC1A51EE85008F1097 /* BNetApiDataLoader.cpp in Sources */,
 				2CB2BBF01A5058D800E1EDE3 /* Realm.cpp in Sources */,
