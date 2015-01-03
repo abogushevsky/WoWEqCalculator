@@ -11,9 +11,9 @@
 
 #include <iostream>
 
-template <typename T>;
+//template <typename T>;
 class JsonParser {
-    T toObject(string *json);
+    //T toObject(std::string *json);
 };
 
 #endif /* defined(__WoWDataDownloader__JsonParser__) */

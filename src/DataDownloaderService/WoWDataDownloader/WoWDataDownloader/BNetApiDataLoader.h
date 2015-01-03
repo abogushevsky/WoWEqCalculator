@@ -21,6 +21,7 @@ private:
 public:
     ~BNetApiDataLoader() {};
     BNetApiDataLoader(IWebClient *webClient);
+    std::vector<Realm> loadRealms();
 };
 
 #endif /* defined(__WoWDataDownloader__BNetApiDataLoader__) */

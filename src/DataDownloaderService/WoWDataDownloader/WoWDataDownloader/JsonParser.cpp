@@ -8,6 +8,6 @@
 
 #include "JsonParser.h"
 
-T JsonParser::toObject(string *object) {
-    return nullptr;
-}
+//T JsonParser::toObject(string *object) {
+//    return nullptr;
+//}

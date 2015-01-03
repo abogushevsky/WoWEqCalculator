@@ -13,7 +13,7 @@ using namespace std;
 
 IDataLoader::~IDataLoader() {};
 
-vector<Realm> IDataLoader::loadRealms() {
+vector<Realm> BNetApiDataLoader::loadRealms() {
     string *realmsJson = this->_webClient->get(REALMS_LIST_URL);
     
     if (realmsJson) {
@@ -23,6 +23,17 @@ vector<Realm> IDataLoader::loadRealms() {
     
     return vector<Realm>(0);
 }
+
+/*vector<Realm> IDataLoader::loadRealms() {
+    string *realmsJson = _webClient->get(REALMS_LIST_URL);
+    
+    if (realmsJson) {
+        //parse & save to mongo
+        delete (realmsJson);
+    }
+    
+    return vector<Realm>(0);
+}*/
 
 BNetApiDataLoader::BNetApiDataLoader(IWebClient *webClient) {
     if (!webClient) {
