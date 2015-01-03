@@ -8,6 +8,10 @@
 
 #include "JsonParser.h"
 
-//T JsonParser::toObject(string *object) {
-//    return nullptr;
-//}
+using namespace std;
+
+template <typename T>
+T JsonParser::toObject(string *object) {
+    T result;
+    return T();
+}
