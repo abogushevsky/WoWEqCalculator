@@ -14,7 +14,7 @@
 class BoostJsonParser : public IJsonParser {
 public:
     ~BoostJsonParser() {};
-    std::vector<Realm> parseRealms(const std::string json);
+    std::vector<Realm> parseRealms(std::stringstream* jsonStream);
 };
 
 #endif /* defined(__WoWDataDownloader__BoostJsonParser__) */

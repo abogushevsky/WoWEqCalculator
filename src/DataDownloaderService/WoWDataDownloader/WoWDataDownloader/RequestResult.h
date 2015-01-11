@@ -10,12 +10,14 @@
 #define WoWDataDownloader_RequestResult_h
 
 #include <vector>
+#include <sstream>
 
 struct RequestResult {
+    inline RequestResult() { this->content = new std::stringstream(); }
     unsigned int statusCode;
     std::string statusMessage;
     std::vector<std::string> headers;
-    std::string content;
+    std::stringstream* content;
 };
 
 #endif

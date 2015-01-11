@@ -7,17 +7,23 @@
 //
 
 #include <iostream>
+#include <string>
 #include "Item.h"
 #include "Realm.h"
 #include "IDataLoader.h"
 #include "BNetApiDataLoader.h"
 #include "RestClient.h"
+#include "BoostJsonParser.h"
 
 using namespace std;
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    std::cout << "Hello, World!\n";
+    //std::cout << "Hello, World!\n";
+    
+    /*std::stringstream ss("test");
+    ss << " 123 ";
+    cout << ss.str();*/
     
     Realm r = {
         "1",
@@ -28,7 +34,7 @@ int main(int argc, const char * argv[]) {
         RealmPopulations::low
     };
     
-    IWebClient *client = new RestClient();
+   /* IWebClient *client = new RestClient();
     RequestResult *requestResult = client->get("eu.battle.net/api/wow/realm/status");
     if (requestResult) {
         cout << "Status code: " << requestResult->statusCode << endl;
@@ -38,10 +44,10 @@ int main(int argc, const char * argv[]) {
     }
     
     delete requestResult;
-    delete client;
+    delete client; */
     
-    //IDataLoader *loader = new BNetApiDataLoader(new RestClient());
-    //loader->loadRealms();
+    IDataLoader *loader = new BNetApiDataLoader(new RestClient(), new BoostJsonParser());
+    loader->loadRealms();
     
     return 0;
 }

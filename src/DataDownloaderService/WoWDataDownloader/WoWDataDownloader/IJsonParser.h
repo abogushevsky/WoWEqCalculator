@@ -15,7 +15,7 @@
 class IJsonParser {
 public:
     virtual ~IJsonParser();
-    virtual std::vector<Realm> parseRealms(const std::string json) = 0;
+    virtual std::vector<Realm> parseRealms(std::stringstream* jsonStream) = 0;
 };
 
 #endif
