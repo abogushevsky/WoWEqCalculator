@@ -16,6 +16,13 @@ IJsonParser::~IJsonParser() {};
 
 vector<Realm> BoostJsonParser::parseRealms(stringstream* jsonStream) {
     vector<Realm> result;
+    
+    string filePath = "/Users/namelessone//Development/test.txt";
+    std::ofstream fileStr;
+    fileStr.open(filePath, std::ios::app);
+    fileStr << jsonStream->str() << endl;
+    fileStr.close();
+    
     boost::property_tree::ptree propTree;
     boost::property_tree::read_json(*jsonStream, propTree);
     
