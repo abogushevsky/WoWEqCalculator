@@ -15,6 +15,7 @@ class RestClient : public IWebClient {
 public:
     ~RestClient() {};
     RestClient() {};
+    std::string* get(std::string url);
 };
 
 #endif /* defined(__WoWDataDownloader__RestClient__) */

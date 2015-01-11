@@ -19,7 +19,7 @@ IWebClient::~IWebClient() {
     
 }
 
-string* IWebClient::get(string url) {
+string* RestClient::get(string url) {
     string path;
     long firstSlashIndex = url.find('/');
     if (firstSlashIndex >= 0) {

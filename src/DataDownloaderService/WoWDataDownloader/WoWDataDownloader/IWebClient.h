@@ -14,7 +14,7 @@
 class IWebClient {
 public:
     virtual ~IWebClient();
-    virtual std::string* get(std::string url);
+    virtual std::string* get(std::string url) = 0;
 };
 
 
