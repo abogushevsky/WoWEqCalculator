@@ -10,6 +10,7 @@
 		2C2DF9E71A49F85F005E6547 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C2DF9E61A49F85F005E6547 /* main.cpp */; };
 		2C53FDCA1A62865900DEC287 /* libboost_regex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C53FDC91A62865900DEC287 /* libboost_regex.dylib */; };
 		2C53FDCC1A62866500DEC287 /* libboost_system.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C53FDCB1A62866500DEC287 /* libboost_system.dylib */; };
+		2C53FDD11A62998900DEC287 /* BoostJsonParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C53FDCF1A62998900DEC287 /* BoostJsonParser.cpp */; };
 		2C619DC31A5329D0006C1222 /* RestClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C619DC11A5329D0006C1222 /* RestClient.cpp */; };
 		2CDD47DC1A51EE85008F1097 /* BNetApiDataLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CDD47DA1A51EE85008F1097 /* BNetApiDataLoader.cpp */; };
 		E66656231A571BB800DA71AF /* JsonParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E66656211A571BB800DA71AF /* JsonParser.cpp */; };
@@ -33,6 +34,9 @@
 		2C53FDC91A62865900DEC287 /* libboost_regex.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_regex.dylib; path = ../../../../../Development/CPP/libs/lib/libboost_regex.dylib; sourceTree = "<group>"; };
 		2C53FDCB1A62866500DEC287 /* libboost_system.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_system.dylib; path = ../../../../../Development/CPP/libs/lib/libboost_system.dylib; sourceTree = "<group>"; };
 		2C53FDCD1A6288EC00DEC287 /* RequestResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestResult.h; sourceTree = "<group>"; };
+		2C53FDCE1A6298EC00DEC287 /* IJsonParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IJsonParser.h; sourceTree = "<group>"; };
+		2C53FDCF1A62998900DEC287 /* BoostJsonParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BoostJsonParser.cpp; sourceTree = "<group>"; };
+		2C53FDD01A62998900DEC287 /* BoostJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoostJsonParser.h; sourceTree = "<group>"; };
 		2C619DC11A5329D0006C1222 /* RestClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RestClient.cpp; sourceTree = "<group>"; };
 		2C619DC21A5329D0006C1222 /* RestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestClient.h; sourceTree = "<group>"; };
 		2C619DC41A532B0B006C1222 /* IWebClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IWebClient.h; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 				2C619DC21A5329D0006C1222 /* RestClient.h */,
 				2CDD47DA1A51EE85008F1097 /* BNetApiDataLoader.cpp */,
 				2CDD47DB1A51EE85008F1097 /* BNetApiDataLoader.h */,
+				2C53FDCF1A62998900DEC287 /* BoostJsonParser.cpp */,
+				2C53FDD01A62998900DEC287 /* BoostJsonParser.h */,
 			);
 			name = Impl;
 			sourceTree = "<group>";
@@ -114,6 +120,7 @@
 			children = (
 				2C97184C1A51EBE0004ECF9B /* IDataLoader.h */,
 				2C619DC41A532B0B006C1222 /* IWebClient.h */,
+				2C53FDCE1A6298EC00DEC287 /* IJsonParser.h */,
 			);
 			name = Abstractions;
 			sourceTree = "<group>";
@@ -185,6 +192,7 @@
 			files = (
 				2C619DC31A5329D0006C1222 /* RestClient.cpp in Sources */,
 				E66656231A571BB800DA71AF /* JsonParser.cpp in Sources */,
+				2C53FDD11A62998900DEC287 /* BoostJsonParser.cpp in Sources */,
 				2C2DF9E71A49F85F005E6547 /* main.cpp in Sources */,
 				2CDD47DC1A51EE85008F1097 /* BNetApiDataLoader.cpp in Sources */,
 			);
