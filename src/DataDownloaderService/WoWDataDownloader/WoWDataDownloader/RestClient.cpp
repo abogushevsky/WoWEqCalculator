@@ -90,11 +90,8 @@ RequestResult* RestClient::get(string url) {
     
     // Write whatever content we already have to output.
     if (response.size() > 0) {
-        
-        //string content((std::istreambuf_iterator<char>(&response)), std::istreambuf_iterator<char>());
-        //result->content = string((std::istreambuf_iterator<char>(&response)), std::istreambuf_iterator<char>());
         (*result->content) << &response;
-        //cout << ss.str();
+        //cout << &response;
     }
     
     // Read until EOF, writing data to output as we go.
