@@ -14,11 +14,11 @@ using namespace std;
 IDataLoader::~IDataLoader() {};
 
 vector<Realm> BNetApiDataLoader::loadRealms() {
-    string *realmsJson = this->_webClient->get(REALMS_LIST_URL);
+    RequestResult *realmsResult = this->_webClient->get(REALMS_LIST_URL);
     
-    if (realmsJson) {
+    if (realmsResult) {
         //parse & save to mongo
-        delete (realmsJson);
+        delete (realmsResult);
     }
     
     return vector<Realm>(0);

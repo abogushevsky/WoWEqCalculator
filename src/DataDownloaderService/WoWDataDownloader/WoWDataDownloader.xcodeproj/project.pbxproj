@@ -8,12 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2C2DF9E71A49F85F005E6547 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C2DF9E61A49F85F005E6547 /* main.cpp */; };
+		2C53FDCA1A62865900DEC287 /* libboost_regex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C53FDC91A62865900DEC287 /* libboost_regex.dylib */; };
+		2C53FDCC1A62866500DEC287 /* libboost_system.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C53FDCB1A62866500DEC287 /* libboost_system.dylib */; };
 		2C619DC31A5329D0006C1222 /* RestClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C619DC11A5329D0006C1222 /* RestClient.cpp */; };
-		2C8E86F61A4B44E000620501 /* Item.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C8E86F41A4B44E000620501 /* Item.cpp */; };
-		2CB2BBF01A5058D800E1EDE3 /* Realm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CB2BBEE1A5058D800E1EDE3 /* Realm.cpp */; };
 		2CDD47DC1A51EE85008F1097 /* BNetApiDataLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CDD47DA1A51EE85008F1097 /* BNetApiDataLoader.cpp */; };
-		E66055A01A60355C00088056 /* libboost_regex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E660559F1A60355C00088056 /* libboost_regex.dylib */; };
-		E66055A21A60357100088056 /* libboost_system.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E66055A11A60357100088056 /* libboost_system.dylib */; };
 		E66656231A571BB800DA71AF /* JsonParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E66656211A571BB800DA71AF /* JsonParser.cpp */; };
 /* End PBXBuildFile section */
 
@@ -32,18 +30,17 @@
 /* Begin PBXFileReference section */
 		2C2DF9E31A49F85F005E6547 /* WoWDataDownloader */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WoWDataDownloader; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C2DF9E61A49F85F005E6547 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		2C53FDC91A62865900DEC287 /* libboost_regex.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_regex.dylib; path = ../../../../../Development/CPP/libs/lib/libboost_regex.dylib; sourceTree = "<group>"; };
+		2C53FDCB1A62866500DEC287 /* libboost_system.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_system.dylib; path = ../../../../../Development/CPP/libs/lib/libboost_system.dylib; sourceTree = "<group>"; };
+		2C53FDCD1A6288EC00DEC287 /* RequestResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestResult.h; sourceTree = "<group>"; };
 		2C619DC11A5329D0006C1222 /* RestClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RestClient.cpp; sourceTree = "<group>"; };
 		2C619DC21A5329D0006C1222 /* RestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestClient.h; sourceTree = "<group>"; };
 		2C619DC41A532B0B006C1222 /* IWebClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IWebClient.h; sourceTree = "<group>"; };
-		2C8E86F41A4B44E000620501 /* Item.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Item.cpp; sourceTree = "<group>"; };
 		2C8E86F51A4B44E000620501 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		2C97184C1A51EBE0004ECF9B /* IDataLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDataLoader.h; sourceTree = "<group>"; };
-		2CB2BBEE1A5058D800E1EDE3 /* Realm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Realm.cpp; sourceTree = "<group>"; };
 		2CB2BBEF1A5058D800E1EDE3 /* Realm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Realm.h; sourceTree = "<group>"; };
 		2CDD47DA1A51EE85008F1097 /* BNetApiDataLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BNetApiDataLoader.cpp; sourceTree = "<group>"; };
 		2CDD47DB1A51EE85008F1097 /* BNetApiDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNetApiDataLoader.h; sourceTree = "<group>"; };
-		E660559F1A60355C00088056 /* libboost_regex.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_regex.dylib; path = ../../../../../CPP/boost_1_57_0/stage/lib/libboost_regex.dylib; sourceTree = "<group>"; };
-		E66055A11A60357100088056 /* libboost_system.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_system.dylib; path = ../../../../../CPP/boost_1_57_0/stage/lib/libboost_system.dylib; sourceTree = "<group>"; };
 		E66656211A571BB800DA71AF /* JsonParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JsonParser.cpp; sourceTree = "<group>"; };
 		E66656221A571BB800DA71AF /* JsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonParser.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -53,8 +50,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E66055A21A60357100088056 /* libboost_system.dylib in Frameworks */,
-				E66055A01A60355C00088056 /* libboost_regex.dylib in Frameworks */,
+				2C53FDCC1A62866500DEC287 /* libboost_system.dylib in Frameworks */,
+				2C53FDCA1A62865900DEC287 /* libboost_regex.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,8 +61,8 @@
 		2C2DF9DA1A49F85F005E6547 = {
 			isa = PBXGroup;
 			children = (
-				E66055A11A60357100088056 /* libboost_system.dylib */,
-				E660559F1A60355C00088056 /* libboost_regex.dylib */,
+				2C53FDCB1A62866500DEC287 /* libboost_system.dylib */,
+				2C53FDC91A62865900DEC287 /* libboost_regex.dylib */,
 				2C2DF9E51A49F85F005E6547 /* WoWDataDownloader */,
 				2C2DF9E41A49F85F005E6547 /* Products */,
 			);
@@ -105,10 +102,9 @@
 		2C8E86F21A4B444700620501 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				2C8E86F41A4B44E000620501 /* Item.cpp */,
 				2C8E86F51A4B44E000620501 /* Item.h */,
-				2CB2BBEE1A5058D800E1EDE3 /* Realm.cpp */,
 				2CB2BBEF1A5058D800E1EDE3 /* Realm.h */,
+				2C53FDCD1A6288EC00DEC287 /* RequestResult.h */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -188,11 +184,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C619DC31A5329D0006C1222 /* RestClient.cpp in Sources */,
-				2C8E86F61A4B44E000620501 /* Item.cpp in Sources */,
 				E66656231A571BB800DA71AF /* JsonParser.cpp in Sources */,
 				2C2DF9E71A49F85F005E6547 /* main.cpp in Sources */,
 				2CDD47DC1A51EE85008F1097 /* BNetApiDataLoader.cpp in Sources */,
-				2CB2BBF01A5058D800E1EDE3 /* Realm.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,12 +273,12 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					/Users/namelessmobile/MacDevelopment/CPP/boost_1_57_0,
+					/Users/namelessone/Development/CPP/libs/include,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/namelessmobile/MacDevelopment/CppLibs/boost_1_55_0,
-					/Users/namelessmobile/MacDevelopment/CPP/boost_1_57_0/stage/lib,
+					/Users/namelessone/Development/CPP/libs,
+					/Users/NamelessOne/Development/CPP/libs/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx10.9;
@@ -297,12 +291,12 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					/Users/namelessmobile/MacDevelopment/CPP/boost_1_57_0,
+					/Users/namelessone/Development/CPP/libs/include,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/namelessmobile/MacDevelopment/CppLibs/boost_1_55_0,
-					/Users/namelessmobile/MacDevelopment/CPP/boost_1_57_0/stage/lib,
+					/Users/namelessone/Development/CPP/libs,
+					/Users/NamelessOne/Development/CPP/libs/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx10.9;

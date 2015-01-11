@@ -13,6 +13,8 @@
 #include "BNetApiDataLoader.h"
 #include "RestClient.h"
 
+using namespace std;
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
@@ -27,9 +29,12 @@ int main(int argc, const char * argv[]) {
     };
     
     IWebClient *client = new RestClient();
-    std::string *requestResult = client->get("eu.battle.net/api/wow/realm/status");
+    RequestResult *requestResult = client->get("eu.battle.net/api/wow/realm/status");
     if (requestResult) {
-        std::cout << "RESULT: " << *requestResult;
+        cout << "Status code: " << requestResult->statusCode << endl;
+        cout << "Status message: " << requestResult->statusMessage << endl;
+        //TODO: iterate over earch header;
+        cout << "Content: " << requestResult->content;
     }
     
     delete requestResult;

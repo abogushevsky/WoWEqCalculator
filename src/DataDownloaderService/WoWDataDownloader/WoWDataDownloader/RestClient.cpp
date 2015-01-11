@@ -19,7 +19,9 @@ IWebClient::~IWebClient() {
     
 }
 
-string* RestClient::get(string url) {
+RequestResult* RestClient::get(string url) {
+    RequestResult *result = new RequestResult();
+    
     string path;
     long firstSlashIndex = url.find('/');
     if (firstSlashIndex >= 0) {
@@ -27,20 +29,16 @@ string* RestClient::get(string url) {
         url = url.substr(0, firstSlashIndex);
     }
     
-    cout << "Requesting: " << url << endl;
     io_service service;
     ip::tcp::resolver resolver(service);
     ip::tcp::resolver::query query(url, "http");
     ip::tcp::resolver::iterator iter = resolver.resolve(query);
     ip::tcp::resolver::iterator end;
     
-    cout << "Trace for " << url << endl;
-    
     ip::tcp::socket socket(service);
     boost::system::error_code error = boost::asio::error::host_not_found;
     while(error && iter != end) {
         ip::tcp::endpoint ep = *iter++;
-        std::cout << ep.address().to_string() << std::endl;
         socket.close();
         socket.connect(ep, error);
     }
@@ -67,17 +65,19 @@ string* RestClient::get(string url) {
     istream response_stream(&response);
     string http_version;
     response_stream >> http_version;
-    unsigned int status_code;
-    response_stream >> status_code;
+    //unsigned int status_code;
+    response_stream >> result->statusCode;
     string status_message;
-    getline(response_stream, status_message);
+    getline(response_stream, result->statusMessage);
     if (!response_stream || http_version.substr(0, 5) != "HTTP/")
     {
+        //TODO: throw exception
         cout << "Invalid response\n";
     }
-    if (status_code != 200)
+    if (result->statusCode != 200)
     {
-        cout << "Response returned with status code " << status_code << "\n";
+        //TODO: throw exception
+        cout << "Response returned with status code " << result->statusCode << "\n";
     }
     
     // Read the response headers, which are terminated by a blank line.
@@ -85,22 +85,18 @@ string* RestClient::get(string url) {
     
     // Process the response headers.
     string header;
-    while (getline(response_stream, header) && header != "\r")
-        cout << header << "\n";
-    cout << "\n";
+    while (getline(response_stream, header) && header != "\r") {
+        result->headers.push_back(header);
+    }
     
     // Write whatever content we already have to output.
-    if (response.size() > 0)
-        cout << &response;
+    if (response.size() > 0) {
+        //string content((std::istreambuf_iterator<char>(&response)), std::istreambuf_iterator<char>());
+        result->content = string((std::istreambuf_iterator<char>(&response)), std::istreambuf_iterator<char>());
+        //cout << &response;
+    }
     
-    // Read until EOF, writing data to output as we go.
-    while (boost::asio::read(socket, response,
-                             boost::asio::transfer_at_least(1), error))
-        cout << &response;
-    if (error != boost::asio::error::eof)
-        throw boost::system::system_error(error);
-    
-    return new string((std::istreambuf_iterator<char>(&response)), std::istreambuf_iterator<char>());
+    return result;
 }
 
 

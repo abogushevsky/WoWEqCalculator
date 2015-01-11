@@ -10,12 +10,12 @@
 #define WoWDataDownloader_WebClient_h
 
 #include <string>
+#include "RequestResult.h"
 
 class IWebClient {
 public:
     virtual ~IWebClient();
-    virtual std::string* get(std::string url) = 0;
+    virtual RequestResult* get(std::string url) = 0;
 };
-
 
 #endif
