@@ -88,6 +88,8 @@ RequestResult* RestClient::get(string url) {
         result->headers.push_back(header);
     }
     
+    //getline(response_stream, header);
+    //cout << header;
     // Write whatever content we already have to output.
     if (response.size() > 0) {
         (*result->content) << &response;
