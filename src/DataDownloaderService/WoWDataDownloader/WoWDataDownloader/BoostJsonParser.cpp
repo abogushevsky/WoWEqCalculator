@@ -16,14 +16,14 @@ IJsonParser::~IJsonParser() {};
 
 vector<Realm> BoostJsonParser::parseRealms(stringstream* jsonStream) {
     vector<Realm> result;
-    char test[100000];
+    char test[1000000];
     /*while (jsonStream->read(test, 1) && test[0] != '\r') {
     while ((test = (char)jsonStream->get()) != '\r') {
         cout << test;
     }*/
     //cout << jsonStream->ignore(128, '\r').read(test, 1024);
     
-    jsonStream->ignore(128, '\n').read(test, 100000);
+    jsonStream->ignore(128, '\n').read(test, 1000000);
     //cout << test;
     
     string filePath = "/Users/namelessone//Development/test.txt";
@@ -33,7 +33,7 @@ vector<Realm> BoostJsonParser::parseRealms(stringstream* jsonStream) {
     fileStr.close();
     
     boost::property_tree::ptree propTree;
-    //boost::property_tree::read_json(jsonStream->ignore(128, '\r'), propTree);
+    boost::property_tree::read_json(*jsonStream, propTree);
     
     //auto realms = propTree.get_child("realms");
     
