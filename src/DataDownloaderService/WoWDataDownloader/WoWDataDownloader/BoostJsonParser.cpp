@@ -14,13 +14,19 @@ using namespace std;
 
 IJsonParser::~IJsonParser() {};
 
-vector<Realm> BoostJsonParser::parseRealms(stringstream* jsonStream) {
+static void test(istringstream &sss) {
+    string shit;
+    while(sss >> shit)
+        cout << shit;
+}
+
+vector<Realm> BoostJsonParser::parseRealms(string* jsonStream) {
     vector<Realm> result;
-    char test[1000000];
+    //char test[1000000];
     /*while (jsonStream->read(test, 1) && test[0] != '\r') {
     while ((test = (char)jsonStream->get()) != '\r') {
         cout << test;
-    }*/
+    }
     //cout << jsonStream->ignore(128, '\r').read(test, 1024);
     
     jsonStream->ignore(128, '\n').read(test, 1000000);
@@ -30,12 +36,21 @@ vector<Realm> BoostJsonParser::parseRealms(stringstream* jsonStream) {
     std::ofstream fileStr;
     fileStr.open(filePath, std::ios::app);
     fileStr << test << endl;
-    fileStr.close();
+    fileStr.close();*/
+    //cout << jsonStream;
+    //string str = test;
+    istringstream sss(*jsonStream);
+    string shit;
     
+    sss >> shit;
+    test(sss);
     boost::property_tree::ptree propTree;
-    boost::property_tree::read_json(*jsonStream, propTree);
+    //boost::property_tree::read_json(sss, propTree);
     
     //auto realms = propTree.get_child("realms");
     
     return result;
 }
+
+
+

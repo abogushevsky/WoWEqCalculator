@@ -85,6 +85,7 @@ RequestResult* RestClient::get(string url) {
     // Process the response headers.
     string header;
     while (getline(response_stream, header) && header != "\r") {
+        //cout << header;
         result->headers.push_back(header);
     }
     
@@ -92,17 +93,19 @@ RequestResult* RestClient::get(string url) {
     //cout << header;
     // Write whatever content we already have to output.
     if (response.size() > 0) {
-        (*result->content) << &response;
+        //(*result->content) << &response;
         //cout << &response;
     }
     
     // Read until EOF, writing data to output as we go.
     while (boost::asio::read(socket, response,
                              boost::asio::transfer_at_least(1), error)) {
-        (*result->content) << &response;
+        //(*result->content) << &response;
     }
     /*if (error != boost::asio::error::eof)
         throw boost::system::system_error(error);*/
+    
+    result->content = new string((std::istreambuf_iterator<char>(&response)), std::istreambuf_iterator<char>());
     
     return result;
 }

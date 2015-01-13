@@ -13,12 +13,12 @@
 #include <sstream>
 
 struct RequestResult {
-    inline RequestResult() { this->content = new std::stringstream(); }
+    //inline RequestResult(); //{ this->content = new std::stringstream(); }
     inline ~RequestResult() { delete(this->content); }
     unsigned int statusCode;
     std::string statusMessage;
     std::vector<std::string> headers;
-    std::stringstream* content;
+    std::string* content;
 };
 
 #endif

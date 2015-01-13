@@ -12,9 +12,10 @@
 #include "IJsonParser.h"
 
 class BoostJsonParser : public IJsonParser {
+
 public:
     ~BoostJsonParser() {};
-    std::vector<Realm> parseRealms(std::stringstream* jsonStream);
+    std::vector<Realm> parseRealms(std::string* jsonStream);
 };
 
 #endif /* defined(__WoWDataDownloader__BoostJsonParser__) */
