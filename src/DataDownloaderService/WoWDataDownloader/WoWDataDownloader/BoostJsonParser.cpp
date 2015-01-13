@@ -14,12 +14,6 @@ using namespace std;
 
 IJsonParser::~IJsonParser() {};
 
-static void test(istringstream &sss) {
-    string shit;
-    while(sss >> shit)
-        cout << shit;
-}
-
 vector<Realm> BoostJsonParser::parseRealms(std::string* itemJson) {
     vector<Realm> result;
     
