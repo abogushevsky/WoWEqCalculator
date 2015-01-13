@@ -29,15 +29,17 @@ vector<Realm> BoostJsonParser::parseRealms(std::string* itemJson) {
 }
 
 Item BoostJsonParser::parseItem(std::string* itemJson) {
+    Item result;
+    
     istringstream jsonStream(*itemJson);
     boost::property_tree::ptree propTree;
     boost::property_tree::read_json(jsonStream, propTree);
     
     //test code
     auto prop = propTree.get_child("id");
-    int value = prop.get_value<int>();
+    result.id = prop.get_value<int>();
     
-    return Item();
+    return result;
 }
 
 

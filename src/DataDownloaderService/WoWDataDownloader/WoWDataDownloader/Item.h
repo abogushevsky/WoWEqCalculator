@@ -10,7 +10,7 @@
 #define __WoWDataDownloader__Item__
 
 struct Item {
-    
+    int id;
 };
 
 #endif /* defined(__WoWDataDownloader__Item__) */
