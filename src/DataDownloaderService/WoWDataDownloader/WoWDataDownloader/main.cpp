@@ -47,7 +47,8 @@ int main(int argc, const char * argv[]) {
     delete client; */
     
     IDataLoader *loader = new BNetApiDataLoader(new RestClient(), new BoostJsonParser());
-    loader->loadRealms();
+    //loader->loadRealms();
+    loader->loadItems(10000, 10001);
     
     return 0;
 }

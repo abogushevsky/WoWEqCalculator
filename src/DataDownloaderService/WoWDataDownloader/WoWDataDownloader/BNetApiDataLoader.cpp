@@ -41,3 +41,16 @@ vector<Realm> BNetApiDataLoader::loadRealms() {
     
     return vector<Realm>(0);
 }
+
+vector<Item> BNetApiDataLoader::loadItems(int fromId, int toId) {
+    for (int i = fromId; i <= toId; i++) {
+        string url = ITEM_INFO_URL + to_string(i);
+        RequestResult* itemResult = this->_webClient->get(url);
+        if (itemResult) {
+            Item item = this->_jsonParser->parseItem(itemResult->content);
+            delete(itemResult);
+        }
+    }
+    
+    return vector<Item>(0);
+}

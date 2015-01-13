@@ -12,12 +12,14 @@
 #include <vector>
 #include <iostream>
 #include <vector>
+#include "Item.h"
 #include "Realm.h"
 
 class IDataLoader {
 public:
     virtual ~IDataLoader();
     virtual std::vector<Realm> loadRealms() = 0;
+    virtual std::vector<Item> loadItems(int fromId, int toId) = 0;
 };
 
 #endif
