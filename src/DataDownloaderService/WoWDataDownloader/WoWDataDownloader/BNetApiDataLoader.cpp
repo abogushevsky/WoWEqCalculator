@@ -35,7 +35,7 @@ vector<Realm> BNetApiDataLoader::loadRealms() {
     
     if (realmsResult) {
         //parse & save to mongo
-        vector<Realm> realms = this->_jsonParser->parseRealms(realmsResult->content);
+        vector<Realm> realms = this->_jsonParser->parseRealms(*realmsResult->content);
         delete (realmsResult);
     }
     
@@ -47,7 +47,7 @@ vector<Item> BNetApiDataLoader::loadItems(int fromId, int toId) {
         string url = ITEM_INFO_URL + to_string(i);
         RequestResult* itemResult = this->_webClient->get(url);
         if (itemResult) {
-            Item item = this->_jsonParser->parseItem(itemResult->content);
+            Item item = this->_jsonParser->parseItem(*itemResult->content);
             delete(itemResult);
         }
     }

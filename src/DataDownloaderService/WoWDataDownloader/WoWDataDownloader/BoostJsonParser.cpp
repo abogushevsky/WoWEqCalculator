@@ -14,7 +14,7 @@ using namespace std;
 
 IJsonParser::~IJsonParser() {};
 
-vector<Realm> BoostJsonParser::parseRealms(std::string* itemJson) {
+vector<Realm> BoostJsonParser::parseRealms(std::string& itemJson) {
     vector<Realm> result;
     
     //realms parsing not implemented yet. Maybe it is not needed at all.
@@ -22,10 +22,10 @@ vector<Realm> BoostJsonParser::parseRealms(std::string* itemJson) {
     return result;
 }
 
-Item BoostJsonParser::parseItem(std::string* itemJson) {
+Item BoostJsonParser::parseItem(std::string& itemJson) {
     Item result;
     
-    istringstream jsonStream(*itemJson);
+    istringstream jsonStream(itemJson);
     boost::property_tree::ptree propTree;
     boost::property_tree::read_json(jsonStream, propTree);
     
