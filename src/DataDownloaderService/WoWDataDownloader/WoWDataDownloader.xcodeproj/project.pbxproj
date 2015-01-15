@@ -29,6 +29,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2C025A961A683F5300B2CF00 /* Dictionaries.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dictionaries.h; sourceTree = "<group>"; };
 		2C1CEC791A66FB5100235592 /* bonusStats */ = {isa = PBXFileReference; lastKnownFileType = text; path = bonusStats; sourceTree = "<group>"; };
 		2C2DF9E31A49F85F005E6547 /* WoWDataDownloader */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WoWDataDownloader; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C2DF9E61A49F85F005E6547 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -113,6 +114,7 @@
 				2C8E86F51A4B44E000620501 /* Item.h */,
 				2CB2BBEF1A5058D800E1EDE3 /* Realm.h */,
 				2C53FDCD1A6288EC00DEC287 /* RequestResult.h */,
+				2C025A961A683F5300B2CF00 /* Dictionaries.h */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
