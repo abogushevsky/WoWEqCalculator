@@ -18,6 +18,7 @@ class BNetApiDataLoader : public IDataLoader {
 private:
     const std::string REALMS_LIST_URL = "eu.battle.net/api/wow/realm/status";
     const std::string ITEM_INFO_URL = "eu.battle.net/api/wow/item/";
+    const std::string ITEM_CLASSES_URL = "eu.battle.net/api/wow/data/item/classes";
     
     IWebClient* _webClient;
     IJsonParser* _jsonParser;
@@ -25,8 +26,9 @@ private:
 public:
     ~BNetApiDataLoader();
     BNetApiDataLoader(IWebClient* webClient, IJsonParser* jsonParser);
-    std::vector<Realm> loadRealms();
-    std::vector<Item> loadItems(int fromId, int toId);
+    void loadRealms();
+    void loadItems(int fromId, int toId);
+    void loadItemClasses();
 };
 
 #endif /* defined(__WoWDataDownloader__BNetApiDataLoader__) */

@@ -18,8 +18,9 @@
 class IDataLoader {
 public:
     virtual ~IDataLoader();
-    virtual std::vector<Realm> loadRealms() = 0;
-    virtual std::vector<Item> loadItems(int fromId, int toId) = 0;
+    virtual void loadRealms() = 0;
+    virtual void loadItems(int fromId, int toId) = 0;
+    virtual void loadItemClasses() = 0;
 };
 
 #endif
