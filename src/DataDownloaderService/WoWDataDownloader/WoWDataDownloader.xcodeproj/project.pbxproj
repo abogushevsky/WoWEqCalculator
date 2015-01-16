@@ -12,6 +12,7 @@
 		2C53FDCC1A62866500DEC287 /* libboost_system.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C53FDCB1A62866500DEC287 /* libboost_system.dylib */; };
 		2C53FDD11A62998900DEC287 /* BoostJsonParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C53FDCF1A62998900DEC287 /* BoostJsonParser.cpp */; };
 		2C619DC31A5329D0006C1222 /* RestClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C619DC11A5329D0006C1222 /* RestClient.cpp */; };
+		2C8FA2231A697D980087A879 /* MongoDbDataRepository.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C8FA2211A697D980087A879 /* MongoDbDataRepository.cpp */; };
 		2CDD47DC1A51EE85008F1097 /* BNetApiDataLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CDD47DA1A51EE85008F1097 /* BNetApiDataLoader.cpp */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,9 @@
 		2C619DC21A5329D0006C1222 /* RestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestClient.h; sourceTree = "<group>"; };
 		2C619DC41A532B0B006C1222 /* IWebClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IWebClient.h; sourceTree = "<group>"; };
 		2C8E86F51A4B44E000620501 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		2C8FA21F1A697CCB0087A879 /* IWowDataRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWowDataRepository.h; sourceTree = "<group>"; };
+		2C8FA2211A697D980087A879 /* MongoDbDataRepository.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MongoDbDataRepository.cpp; sourceTree = "<group>"; };
+		2C8FA2221A697D980087A879 /* MongoDbDataRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MongoDbDataRepository.h; sourceTree = "<group>"; };
 		2C97184C1A51EBE0004ECF9B /* IDataLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDataLoader.h; sourceTree = "<group>"; };
 		2CB2BBEF1A5058D800E1EDE3 /* Realm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Realm.h; sourceTree = "<group>"; };
 		2CDD47DA1A51EE85008F1097 /* BNetApiDataLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BNetApiDataLoader.cpp; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 				2CDD47DB1A51EE85008F1097 /* BNetApiDataLoader.h */,
 				2C53FDCF1A62998900DEC287 /* BoostJsonParser.cpp */,
 				2C53FDD01A62998900DEC287 /* BoostJsonParser.h */,
+				2C8FA2211A697D980087A879 /* MongoDbDataRepository.cpp */,
+				2C8FA2221A697D980087A879 /* MongoDbDataRepository.h */,
 			);
 			name = Impl;
 			sourceTree = "<group>";
@@ -121,6 +127,7 @@
 				2C97184C1A51EBE0004ECF9B /* IDataLoader.h */,
 				2C619DC41A532B0B006C1222 /* IWebClient.h */,
 				2C53FDCE1A6298EC00DEC287 /* IJsonParser.h */,
+				2C8FA21F1A697CCB0087A879 /* IWowDataRepository.h */,
 			);
 			name = Abstractions;
 			sourceTree = "<group>";
@@ -183,6 +190,7 @@
 			files = (
 				2C619DC31A5329D0006C1222 /* RestClient.cpp in Sources */,
 				2C53FDD11A62998900DEC287 /* BoostJsonParser.cpp in Sources */,
+				2C8FA2231A697D980087A879 /* MongoDbDataRepository.cpp in Sources */,
 				2C2DF9E71A49F85F005E6547 /* main.cpp in Sources */,
 				2CDD47DC1A51EE85008F1097 /* BNetApiDataLoader.cpp in Sources */,
 			);
