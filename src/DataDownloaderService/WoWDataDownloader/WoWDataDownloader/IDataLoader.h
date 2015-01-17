@@ -14,13 +14,14 @@
 #include <vector>
 #include "Item.h"
 #include "Realm.h"
+#include "BatchLoadResult.h"
 
 class IDataLoader {
 public:
     virtual ~IDataLoader();
     virtual void loadRealms() = 0;
-    virtual void loadItems(int fromId, int toId) = 0;
-    virtual void loadItemClasses() = 0;
+    virtual BatchLoadResult loadItems(int fromId, int toId) = 0;
+    virtual BatchLoadResult loadItemClasses() = 0;
 };
 
 #endif

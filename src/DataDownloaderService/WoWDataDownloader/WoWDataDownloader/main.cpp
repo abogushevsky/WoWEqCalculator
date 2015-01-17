@@ -14,6 +14,7 @@
 #include "BNetApiDataLoader.h"
 #include "RestClient.h"
 #include "BoostJsonParser.h"
+#include "MongoDbDataRepository.h"
 
 using namespace std;
 
@@ -46,7 +47,7 @@ int main(int argc, const char * argv[]) {
     delete requestResult;
     delete client; */
     
-    IDataLoader *loader = new BNetApiDataLoader(new RestClient(), new BoostJsonParser());
+    IDataLoader *loader = new BNetApiDataLoader(new RestClient(), new BoostJsonParser(), new MongoDbDataRepository());
     //loader->loadRealms();
     loader->loadItems(10000, 10001);
     

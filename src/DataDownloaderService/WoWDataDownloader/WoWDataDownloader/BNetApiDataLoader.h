@@ -13,6 +13,7 @@
 #include "IDataLoader.h"
 #include "IWebClient.h"
 #include "IJsonParser.h"
+#include "IWowDataRepository.h"
 
 class BNetApiDataLoader : public IDataLoader {
 private:
@@ -22,13 +23,24 @@ private:
     
     IWebClient* _webClient;
     IJsonParser* _jsonParser;
+    IWowDataRepository* _dataRepository;
+    
+    inline void writeSucceededToResult(int entityId, BatchLoadResult& result) {
+        result.loadedIds.push_back(entityId);
+        result.totalLoaded++;
+    }
+    
+    inline void writeFailedToResult(int entityId, BatchLoadResult& result) {
+        result.failedIds.push_back(entityId);
+        result.totalFailed++;
+    }
     
 public:
     ~BNetApiDataLoader();
-    BNetApiDataLoader(IWebClient* webClient, IJsonParser* jsonParser);
+    BNetApiDataLoader(IWebClient* webClient, IJsonParser* jsonParser, IWowDataRepository* dataRepository);
     void loadRealms();
-    void loadItems(int fromId, int toId);
-    void loadItemClasses();
+    BatchLoadResult loadItems(int fromId, int toId);
+    BatchLoadResult loadItemClasses();
 };
 
 #endif /* defined(__WoWDataDownloader__BNetApiDataLoader__) */
