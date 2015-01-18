@@ -63,18 +63,22 @@ vector<ItemClass> BoostJsonParser::parseItemClasses(const std::string& json) {
 WeaponInfo* BoostJsonParser::parseWeaponInfo(boost::property_tree::ptree& propTree) {
     WeaponInfo* result = new WeaponInfo();
     
-    auto prop = propTree.get_child("weaponInfo");
-    
-    if(!prop.empty()) {
-        auto damageProp = prop.get_child("damage");
-        if(!damageProp.empty()) {
-            result->damageExactMax = damageProp.get<float>("exactMax");
-            result->damageExactMin = damageProp.get<float>("exactMin");
-            result->damageMax = damageProp.get<float>("max");
-            result->damageMin = damageProp.get<float>("min");
+    try {
+        auto prop = propTree.get_child("weaponInfo");
+        if(!prop.empty()) {
+            auto damageProp = prop.get_child("damage");
+            if(!damageProp.empty()) {
+                result->damageExactMax = damageProp.get<float>("exactMax");
+                result->damageExactMin = damageProp.get<float>("exactMin");
+                result->damageMax = damageProp.get<float>("max");
+                result->damageMin = damageProp.get<float>("min");
+            }
+            result->dps = prop.get<float>("dps");
+            result->speed = prop.get<float>("weaponSpeed");
         }
-        result->dps = prop.get<float>("dps");
-        result->speed = prop.get<float>("weaponSpeed");
+    }
+    catch(exception ex) {
+        cerr << "Error parsing weapon info: " << &ex << endl;
     }
     
     return result;
