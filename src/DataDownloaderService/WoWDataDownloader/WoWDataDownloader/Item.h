@@ -42,6 +42,7 @@ struct Item {
     int requiredScill;
     bool stackable;
     bool upgradable;
+    std::string icon;
     WeaponInfo weaponInfo;
 };
 

@@ -49,7 +49,13 @@ int main(int argc, const char * argv[]) {
     
     IDataLoader *loader = new BNetApiDataLoader(new RestClient(), new BoostJsonParser(), new MongoDbDataRepository());
     //loader->loadRealms();
-    loader->loadItems(10000, 10001);
+    
+    try {
+        loader->loadItems(10000, 10001);
+    }
+    catch (exception &ex) {
+        cerr << &ex;
+    }
     
     return 0;
 }

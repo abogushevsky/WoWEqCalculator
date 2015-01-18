@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2C2DF9E71A49F85F005E6547 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C2DF9E61A49F85F005E6547 /* main.cpp */; };
+		2C3827241A6BFEC3004FBDBB /* libboost_random.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3827221A6BFEC3004FBDBB /* libboost_random.dylib */; };
+		2C3827251A6BFEC3004FBDBB /* libboost_system.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3827231A6BFEC3004FBDBB /* libboost_system.dylib */; };
 		2C53FDD11A62998900DEC287 /* BoostJsonParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C53FDCF1A62998900DEC287 /* BoostJsonParser.cpp */; };
 		2C619DC31A5329D0006C1222 /* RestClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C619DC11A5329D0006C1222 /* RestClient.cpp */; };
 		2C8FA2231A697D980087A879 /* MongoDbDataRepository.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C8FA2211A697D980087A879 /* MongoDbDataRepository.cpp */; };
 		2CDD47DC1A51EE85008F1097 /* BNetApiDataLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CDD47DA1A51EE85008F1097 /* BNetApiDataLoader.cpp */; };
-		E6C70DE21A6A72410009AE44 /* libboost_regex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E6C70DDE1A6A706F0009AE44 /* libboost_regex.dylib */; };
-		E6C70DE31A6A72410009AE44 /* libboost_system.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E6C70DDF1A6A706F0009AE44 /* libboost_system.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +33,8 @@
 		2C1CEC791A66FB5100235592 /* bonusStats */ = {isa = PBXFileReference; lastKnownFileType = text; path = bonusStats; sourceTree = "<group>"; };
 		2C2DF9E31A49F85F005E6547 /* WoWDataDownloader */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WoWDataDownloader; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C2DF9E61A49F85F005E6547 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		2C3827221A6BFEC3004FBDBB /* libboost_random.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_random.dylib; path = ../../../../../Development/CPP/libs/lib/libboost_random.dylib; sourceTree = "<group>"; };
+		2C3827231A6BFEC3004FBDBB /* libboost_system.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_system.dylib; path = ../../../../../Development/CPP/libs/lib/libboost_system.dylib; sourceTree = "<group>"; };
 		2C53FDCD1A6288EC00DEC287 /* RequestResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestResult.h; sourceTree = "<group>"; };
 		2C53FDCE1A6298EC00DEC287 /* IJsonParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IJsonParser.h; sourceTree = "<group>"; };
 		2C53FDCF1A62998900DEC287 /* BoostJsonParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BoostJsonParser.cpp; sourceTree = "<group>"; };
@@ -48,8 +50,6 @@
 		2CB2BBEF1A5058D800E1EDE3 /* Realm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Realm.h; sourceTree = "<group>"; };
 		2CDD47DA1A51EE85008F1097 /* BNetApiDataLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BNetApiDataLoader.cpp; sourceTree = "<group>"; };
 		2CDD47DB1A51EE85008F1097 /* BNetApiDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNetApiDataLoader.h; sourceTree = "<group>"; };
-		E6C70DDE1A6A706F0009AE44 /* libboost_regex.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_regex.dylib; path = ../../../../../CPP/boost_1_57_0/stage/lib/libboost_regex.dylib; sourceTree = "<group>"; };
-		E6C70DDF1A6A706F0009AE44 /* libboost_system.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_system.dylib; path = ../../../../../CPP/boost_1_57_0/stage/lib/libboost_system.dylib; sourceTree = "<group>"; };
 		E6C70DE41A6A7AA00009AE44 /* BatchLoadResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BatchLoadResult.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,8 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6C70DE21A6A72410009AE44 /* libboost_regex.dylib in Frameworks */,
-				E6C70DE31A6A72410009AE44 /* libboost_system.dylib in Frameworks */,
+				2C3827241A6BFEC3004FBDBB /* libboost_random.dylib in Frameworks */,
+				2C3827251A6BFEC3004FBDBB /* libboost_system.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,8 +69,8 @@
 		2C2DF9DA1A49F85F005E6547 = {
 			isa = PBXGroup;
 			children = (
-				E6C70DDE1A6A706F0009AE44 /* libboost_regex.dylib */,
-				E6C70DDF1A6A706F0009AE44 /* libboost_system.dylib */,
+				2C3827221A6BFEC3004FBDBB /* libboost_random.dylib */,
+				2C3827231A6BFEC3004FBDBB /* libboost_system.dylib */,
 				2C2DF9E51A49F85F005E6547 /* WoWDataDownloader */,
 				2C2DF9E41A49F85F005E6547 /* Products */,
 			);
@@ -292,7 +292,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx10.9;
 			};
 			name = Debug;
 		};
@@ -313,7 +313,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx10.9;
 			};
 			name = Release;
 		};

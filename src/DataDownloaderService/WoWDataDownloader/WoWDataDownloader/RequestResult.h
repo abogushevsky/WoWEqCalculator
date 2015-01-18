@@ -12,13 +12,21 @@
 #include <vector>
 #include <sstream>
 
-struct RequestResult {
-    //inline RequestResult(); //{ this->content = new std::stringstream(); }
-    inline ~RequestResult() { delete(this->content); }
+struct RequestResultBase {
     unsigned int statusCode;
     std::string statusMessage;
     std::vector<std::string> headers;
+};
+
+struct RequestResult : public RequestResultBase {
+    //inline RequestResult(); //{ this->content = new std::stringstream(); }
+    inline ~RequestResult() { delete(this->content); }
     std::string* content;
+};
+
+struct ImageRequestResult : RequestResultBase {
+    inline ~ImageRequestResult() { delete(this->image); }
+    unsigned char* image;
 };
 
 #endif

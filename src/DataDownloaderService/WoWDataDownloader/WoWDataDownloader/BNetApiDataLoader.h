@@ -20,6 +20,7 @@ private:
     const std::string REALMS_LIST_URL = "eu.battle.net/api/wow/realm/status";
     const std::string ITEM_INFO_URL = "eu.battle.net/api/wow/item/";
     const std::string ITEM_CLASSES_URL = "eu.battle.net/api/wow/data/item/classes";
+    const std::string IMAGE_URL_TEMPLATE = "media.blizzard.com/wow/icons/56/%s.jpg";
     
     IWebClient* _webClient;
     IJsonParser* _jsonParser;

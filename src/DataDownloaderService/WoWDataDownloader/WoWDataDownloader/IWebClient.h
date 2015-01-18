@@ -16,6 +16,7 @@ class IWebClient {
 public:
     virtual ~IWebClient();
     virtual RequestResult* get(std::string url) = 0;
+    
 };
 
 #endif
