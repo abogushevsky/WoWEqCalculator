@@ -51,9 +51,10 @@ BatchLoadResult BNetApiDataLoader::loadItems(int fromId, int toId) {
         RequestResult* itemResult = this->_webClient->get(url);
         if (itemResult) {
             try {
-                Item item = this->_jsonParser->parseItem(*itemResult->content);
-                this->_dataRepository->saveItem(item);
+                Item* item = this->_jsonParser->parseItem(*itemResult->content);
+                this->_dataRepository->saveItem(*item);
                 this->writeSucceededToResult(i, result);
+                delete(item);
             } catch (exception ex) {
                 cerr << &ex;
                 this->writeFailedToResult(i, result);

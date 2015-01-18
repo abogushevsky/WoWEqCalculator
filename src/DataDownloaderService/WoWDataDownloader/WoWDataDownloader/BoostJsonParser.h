@@ -10,13 +10,17 @@
 #define __WoWDataDownloader__BoostJsonParser__
 
 #include "IJsonParser.h"
+#include <boost/property_tree/ptree.hpp>
+#include <boost/property_tree/json_parser.hpp>
 
 class BoostJsonParser : public IJsonParser {
-
+private:
+    WeaponInfo* parseWeaponInfo(boost::property_tree::ptree& propTree);
+    
 public:
     ~BoostJsonParser() {};
     std::vector<Realm> parseRealms(const std::string& json);
-    Item parseItem(const std::string& json);
+    Item* parseItem(const std::string& json);
     std::vector<ItemClass> parseItemClasses(const std::string& json);
 };
 

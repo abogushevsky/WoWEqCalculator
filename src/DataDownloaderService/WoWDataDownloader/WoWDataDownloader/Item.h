@@ -43,7 +43,7 @@ struct Item {
     bool stackable;
     bool upgradable;
     std::string icon;
-    WeaponInfo weaponInfo;
+    WeaponInfo* weaponInfo;
 };
 
 #endif /* defined(__WoWDataDownloader__Item__) */
