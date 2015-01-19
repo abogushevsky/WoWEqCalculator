@@ -48,7 +48,6 @@ Item* BoostJsonParser::parseItem(const std::string& json) {
         result->stackable = propTree.get<bool>("stackable");
         result->upgradable = propTree.get<bool>("upgradable");
         result->weaponInfo = parseWeaponInfo(prop);
-        
     }
     
     return result;
@@ -61,9 +60,8 @@ vector<ItemClass> BoostJsonParser::parseItemClasses(const std::string& json) {
 }
 
 WeaponInfo* BoostJsonParser::parseWeaponInfo(boost::property_tree::ptree& propTree) {
-    WeaponInfo* result = new WeaponInfo();
-    
     try {
+        WeaponInfo* result = new WeaponInfo();
         auto prop = propTree.get_child("weaponInfo");
         if(!prop.empty()) {
             auto damageProp = prop.get_child("damage");
@@ -75,13 +73,14 @@ WeaponInfo* BoostJsonParser::parseWeaponInfo(boost::property_tree::ptree& propTr
             }
             result->dps = prop.get<float>("dps");
             result->speed = prop.get<float>("weaponSpeed");
+            return result;
         }
     }
     catch(exception ex) {
         cerr << "Error parsing weapon info: " << &ex << endl;
     }
     
-    return result;
+    return NULL;
 }
 
 
