@@ -89,3 +89,9 @@ BatchLoadResult BNetApiDataLoader::loadItemClasses() {
     
     return result;
 }
+
+BatchLoadResult BNetApiDataLoader::loadBonusStats() {
+    BatchLoadResult result;
+    
+    return result;
+}

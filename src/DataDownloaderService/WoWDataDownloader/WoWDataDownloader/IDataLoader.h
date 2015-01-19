@@ -22,6 +22,7 @@ public:
     virtual void loadRealms() = 0;
     virtual BatchLoadResult loadItems(int fromId, int toId) = 0;
     virtual BatchLoadResult loadItemClasses() = 0;
+    virtual BatchLoadResult loadBonusStats() = 0;
 };
 
 #endif

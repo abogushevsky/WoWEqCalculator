@@ -59,6 +59,12 @@ vector<ItemClass> BoostJsonParser::parseItemClasses(const std::string& json) {
     return result;
 }
 
+vector<DictionaryItem> BoostJsonParser::parseBonusStats(const std::string &json) {
+    vector<DictionaryItem> result;
+    
+    return result;
+}
+
 WeaponInfo* BoostJsonParser::parseWeaponInfo(boost::property_tree::ptree& propTree) {
     try {
         WeaponInfo* result = new WeaponInfo();

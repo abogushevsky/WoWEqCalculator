@@ -20,6 +20,7 @@ public:
     virtual std::vector<Realm> parseRealms(const std::string& json) = 0;
     virtual Item* parseItem(const std::string& json) = 0;
     virtual std::vector<ItemClass> parseItemClasses(const std::string& json) = 0;
+    virtual std::vector<DictionaryItem> parseBonusStats(const std::string& json) = 0;
 };
 
 #endif

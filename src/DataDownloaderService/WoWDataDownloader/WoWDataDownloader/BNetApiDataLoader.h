@@ -42,6 +42,7 @@ public:
     void loadRealms();
     BatchLoadResult loadItems(int fromId, int toId);
     BatchLoadResult loadItemClasses();
+    BatchLoadResult loadBonusStats();
 };
 
 #endif /* defined(__WoWDataDownloader__BNetApiDataLoader__) */
