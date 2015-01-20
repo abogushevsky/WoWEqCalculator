@@ -39,6 +39,7 @@
 		2C53FDCE1A6298EC00DEC287 /* IJsonParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IJsonParser.h; sourceTree = "<group>"; };
 		2C53FDCF1A62998900DEC287 /* BoostJsonParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BoostJsonParser.cpp; sourceTree = "<group>"; };
 		2C53FDD01A62998900DEC287 /* BoostJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoostJsonParser.h; sourceTree = "<group>"; };
+		2C5CAD5E1A6ED59000599AEF /* IAdminService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IAdminService.h; sourceTree = "<group>"; };
 		2C619DC11A5329D0006C1222 /* RestClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RestClient.cpp; sourceTree = "<group>"; };
 		2C619DC21A5329D0006C1222 /* RestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestClient.h; sourceTree = "<group>"; };
 		2C619DC41A532B0B006C1222 /* IWebClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IWebClient.h; sourceTree = "<group>"; };
@@ -130,6 +131,7 @@
 				2C619DC41A532B0B006C1222 /* IWebClient.h */,
 				2C53FDCE1A6298EC00DEC287 /* IJsonParser.h */,
 				2C8FA21F1A697CCB0087A879 /* IWowDataRepository.h */,
+				2C5CAD5E1A6ED59000599AEF /* IAdminService.h */,
 			);
 			name = Abstractions;
 			sourceTree = "<group>";
@@ -283,6 +285,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/Users/namelessone/Development/CPP/libs/include,
 					/Users/namelessmobile/MacDevelopment/CPP/boost_1_57_0,
+					"/Users/NamelessOne/GitHub/mongo-cxx-driver/src/mongo",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -304,6 +307,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/Users/namelessone/Development/CPP/libs/include,
 					/Users/namelessmobile/MacDevelopment/CPP/boost_1_57_0,
+					"/Users/NamelessOne/GitHub/mongo-cxx-driver/src/mongo",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
