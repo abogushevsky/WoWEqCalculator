@@ -12,6 +12,8 @@
 	<dict>
 		<key>9DBCF229349DE1C3D8305399A45801815BB8E1DB</key>
 		<string>https://github.com/abogushevsky/WoWEqCalculator.git</string>
+		<key>D9A1308312BE71F16E45C683102067409D2244DD</key>
+		<string>https://github.com/mongodb/mongo-cxx-driver.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>src/DataDownloaderService/WoWDataDownloader/WoWDataDownloader.xcodeproj</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>9DBCF229349DE1C3D8305399A45801815BB8E1DB</key>
 		<string>../../../../..</string>
+		<key>D9A1308312BE71F16E45C683102067409D2244DD</key>
+		<string>../../../../../../mongo-cxx-driver</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/abogushevsky/WoWEqCalculator.git</string>
@@ -28,6 +32,14 @@
 	<string>9DBCF229349DE1C3D8305399A45801815BB8E1DB</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D9A1308312BE71F16E45C683102067409D2244DD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>mongo-cxx-driver</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

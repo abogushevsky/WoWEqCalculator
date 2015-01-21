@@ -10,6 +10,8 @@
 #define __WoWDataDownloader__MongoDbDataRepository__
 
 #include "IWowDataRepository.h"
+#include <mongo/client/dbclient.h>
+#include <mongo/bson/bson.h>
 
 class MongoDbDataRepository : public IWowDataRepository {
 public:
