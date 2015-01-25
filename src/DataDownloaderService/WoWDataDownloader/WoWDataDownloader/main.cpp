@@ -15,10 +15,26 @@
 #include "RestClient.h"
 #include "BoostJsonParser.h"
 #include "MongoDbDataRepository.h"
+#include "mongo/client/dbclient.h"
+#include "mongo/bson/bson.h"
 
 using namespace std;
 
+void run() {
+    mongo::DBClientConnection c;
+    c.connect("localhost");
+}
+
 int main(int argc, const char * argv[]) {
+    mongo::client::initialize();
+    try {
+        run();
+        std::cout << "connected ok" << std::endl;
+    } catch( const mongo::DBException &e ) {
+        std::cout << "caught " << e.what() << std::endl;
+    }
+    return EXIT_SUCCESS;
+    
     // insert code here...
     //std::cout << "Hello, World!\n";
 
