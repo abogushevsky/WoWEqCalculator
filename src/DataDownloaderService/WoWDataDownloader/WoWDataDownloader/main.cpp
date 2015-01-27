@@ -15,6 +15,7 @@
 #include "RestClient.h"
 #include "BoostJsonParser.h"
 #include "MongoDbDataRepository.h"
+
 #include "mongo/client/dbclient.h"
 #include "mongo/bson/bson.h"
 
