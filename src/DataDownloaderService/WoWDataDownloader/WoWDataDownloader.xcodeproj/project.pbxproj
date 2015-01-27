@@ -395,15 +395,12 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					/Users/namelessone/Development/CPP/libs/include,
-					/Users/namelessmobile/MacDevelopment/CPP/boost_1_57_0,
+					/usr/local/include,
 					"/Users/NamelessOne/GitHub/mongo-cxx-driver/src",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/namelessone/Development/CPP/libs,
-					/Users/NamelessOne/Development/CPP/libs/lib,
-					/Users/namelessmobile/MacDevelopment/CPP/boost_1_57_0/stage/lib,
+					/usr/local/lib,
 					"/Users/NamelessOne/GitHub/mongo-cxx-driver",
 					"/Users/NamelessOne/GitHub/mongo-cxx-driver/build/darwin/normal",
 				);
@@ -419,15 +416,12 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					/Users/namelessone/Development/CPP/libs/include,
-					/Users/namelessmobile/MacDevelopment/CPP/boost_1_57_0,
+					/usr/local/include,
 					"/Users/NamelessOne/GitHub/mongo-cxx-driver/src",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/namelessone/Development/CPP/libs,
-					/Users/NamelessOne/Development/CPP/libs/lib,
-					/Users/namelessmobile/MacDevelopment/CPP/boost_1_57_0/stage/lib,
+					/usr/local/lib,
 					"/Users/NamelessOne/GitHub/mongo-cxx-driver",
 					"/Users/NamelessOne/GitHub/mongo-cxx-driver/build/darwin/normal",
 				);
