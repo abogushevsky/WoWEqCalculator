@@ -26,7 +26,7 @@ void run() {
 }
 
 int main(int argc, const char * argv[]) {
-    mongo::client::initialize();
+    //mongo::client::initialize();
     try {
         run();
         std::cout << "connected ok" << std::endl;
