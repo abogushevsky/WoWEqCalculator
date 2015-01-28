@@ -64,7 +64,7 @@ int main(int argc, const char * argv[]) {
     delete requestResult;
     delete client; */
     
-    IDataLoader *loader = new BNetApiDataLoader(new RestClient(), new BoostJsonParser(), new MongoDbDataRepository());
+    IDataLoader *loader = new BNetApiDataLoader(new RestClient(), new BoostJsonParser(), new MongoDbDataRepository("localhost"));
     //loader->loadRealms();
     
     try {

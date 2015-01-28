@@ -13,14 +13,13 @@
 #include <mongo/client/dbclient.h>
 #include <mongo/bson/bson.h>
 
-
 class MongoDbDataRepository : public IWowDataRepository {
 private:
-    string _connectionString;
+    std::string _connectionString;
     mongo::DBClientConnection _connection;
     
 public:
-    MongoDbDataRepository(const string &connectionString);
+    MongoDbDataRepository(const std::string &connectionString);
     ~MongoDbDataRepository() {};
     void saveItem(Item& item);
     void saveItemClass(ItemClass& itemClass);
