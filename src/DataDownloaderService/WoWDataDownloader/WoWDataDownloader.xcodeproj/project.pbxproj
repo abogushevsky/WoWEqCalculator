@@ -40,8 +40,8 @@
 		2C53FDD11A62998900DEC287 /* BoostJsonParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C53FDCF1A62998900DEC287 /* BoostJsonParser.cpp */; };
 		2C619DC31A5329D0006C1222 /* RestClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C619DC11A5329D0006C1222 /* RestClient.cpp */; };
 		2C8FA2231A697D980087A879 /* MongoDbDataRepository.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C8FA2211A697D980087A879 /* MongoDbDataRepository.cpp */; };
-		2CD2BC8E1A781F29007F7DDB /* libmongoclient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD2BC8D1A781F29007F7DDB /* libmongoclient.a */; };
 		2CDD47DC1A51EE85008F1097 /* BNetApiDataLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CDD47DA1A51EE85008F1097 /* BNetApiDataLoader.cpp */; };
+		2CF29E4F1A7958FC002C2E83 /* libmongoclient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF29E4E1A7958FC002C2E83 /* libmongoclient.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -104,9 +104,9 @@
 		2C8FA2221A697D980087A879 /* MongoDbDataRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MongoDbDataRepository.h; sourceTree = "<group>"; };
 		2C97184C1A51EBE0004ECF9B /* IDataLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDataLoader.h; sourceTree = "<group>"; };
 		2CB2BBEF1A5058D800E1EDE3 /* Realm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Realm.h; sourceTree = "<group>"; };
-		2CD2BC8D1A781F29007F7DDB /* libmongoclient.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmongoclient.a; path = "../../../../mongo-cxx-driver/build/darwin/osx-version-min_10.9/libmongoclient.a"; sourceTree = "<group>"; };
 		2CDD47DA1A51EE85008F1097 /* BNetApiDataLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BNetApiDataLoader.cpp; sourceTree = "<group>"; };
 		2CDD47DB1A51EE85008F1097 /* BNetApiDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNetApiDataLoader.h; sourceTree = "<group>"; };
+		2CF29E4E1A7958FC002C2E83 /* libmongoclient.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmongoclient.a; path = "../../../../mongo-cxx-drv-new/mongo-cxx-driver-26compat/build/darwin/osx-version-min_10.9/use-system-boost/libmongoclient.a"; sourceTree = "<group>"; };
 		E6C70DE41A6A7AA00009AE44 /* BatchLoadResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BatchLoadResult.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,7 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CD2BC8E1A781F29007F7DDB /* libmongoclient.a in Frameworks */,
+				2CF29E4F1A7958FC002C2E83 /* libmongoclient.a in Frameworks */,
 				2C28B1931A753D450059421D /* libboost_atomic.dylib in Frameworks */,
 				2C28B1941A753D450059421D /* libboost_chrono.dylib in Frameworks */,
 				2C28B1951A753D450059421D /* libboost_container.dylib in Frameworks */,
@@ -154,7 +154,7 @@
 		2C2DF9DA1A49F85F005E6547 = {
 			isa = PBXGroup;
 			children = (
-				2CD2BC8D1A781F29007F7DDB /* libmongoclient.a */,
+				2CF29E4E1A7958FC002C2E83 /* libmongoclient.a */,
 				2C28B1781A753D450059421D /* libboost_atomic.dylib */,
 				2C28B1791A753D450059421D /* libboost_chrono.dylib */,
 				2C28B17A1A753D450059421D /* libboost_container.dylib */,
@@ -396,12 +396,12 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/usr/local/include,
-					"/Users/NamelessOne/GitHub/mongo-cxx-driver/src",
+					"/Users/NamelessOne/GitHub/mongo-cxx-drv-new/mongo-cxx-driver-26compat/src",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/lib,
-					"/Users/NamelessOne/GitHub/mongo-cxx-driver/build/darwin/osx-version-min_10.9",
+					"/Users/NamelessOne/GitHub/mongo-cxx-drv-new/mongo-cxx-driver-26compat/build/darwin/osx-version-min_10.9/use-system-boost",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -416,12 +416,12 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/usr/local/include,
-					"/Users/NamelessOne/GitHub/mongo-cxx-driver/src",
+					"/Users/NamelessOne/GitHub/mongo-cxx-drv-new/mongo-cxx-driver-26compat/src",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/lib,
-					"/Users/NamelessOne/GitHub/mongo-cxx-driver/build/darwin/osx-version-min_10.9",
+					"/Users/NamelessOne/GitHub/mongo-cxx-drv-new/mongo-cxx-driver-26compat/build/darwin/osx-version-min_10.9/use-system-boost",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
