@@ -10,12 +10,17 @@
 #define __WoWDataDownloader__MongoDbDataRepository__
 
 #include "IWowDataRepository.h"
-//#include "mongo/client/dbclient.h"
-//#include "mongo/bson/bson.h"
+#include <mongo/client/dbclient.h>
+#include <mongo/bson/bson.h>
 
 
 class MongoDbDataRepository : public IWowDataRepository {
+private:
+    string _connectionString;
+    mongo::DBClientConnection _connection;
+    
 public:
+    MongoDbDataRepository(const string &connectionString);
     ~MongoDbDataRepository() {};
     void saveItem(Item& item);
     void saveItemClass(ItemClass& itemClass);

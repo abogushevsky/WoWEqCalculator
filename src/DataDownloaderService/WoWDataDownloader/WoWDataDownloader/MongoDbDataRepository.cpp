@@ -8,8 +8,16 @@
 
 #include "MongoDbDataRepository.h"
 
+using namespace std;
+
 IWowDataRepository::~IWowDataRepository() {
     
+}
+
+MongoDbDataRepository::MongoDbDataRepository(const string &connectionString) {
+    //TODO: check connectionString for null
+    this->_connectionString = connectionString;
+    mongo::client::initialize();
 }
 
 void MongoDbDataRepository::saveItem(Item &item) {
