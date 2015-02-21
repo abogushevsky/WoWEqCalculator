@@ -15,7 +15,10 @@ IWowDataRepository::~IWowDataRepository() {
 }
 
 MongoDbDataRepository::MongoDbDataRepository(const string &connectionString) {
-    //TODO: check connectionString for null
+    if (connectionString.empty()) {
+        throw invalid_argument("connectionString");
+    }
+    
     this->_connectionString = connectionString;
     mongo::client::initialize();
 }
