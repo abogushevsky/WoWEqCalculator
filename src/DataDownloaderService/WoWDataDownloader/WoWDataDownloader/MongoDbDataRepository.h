@@ -16,19 +16,23 @@
 class MongoDbDataRepository : public IWowDataRepository {
 private:
     bool _isClientInitialized;
+    mutable std::once_flag _initFlag;
+    
     std::string _connectionString;
     mongo::DBClientConnection _connection;
+    
+    void initClient() {
+        auto initResult = mongo::client::initialize();
+        if(!initResult.isOK()) {
+            throw "Unable to init mongo client";
+        }
+    }
     template<typename TResult>
     TResult wrapDbCall(TResult (*dbCall)()) {
         try {
-            if (!this->_isClientInitialized) {
-                auto initResult = mongo::client::initialize();
-                if(!initResult.isOK()) {
-                    throw "Unable to init mongo client";
-                }
-            }
+            std::call_once(this->_initFlag, &MongoDbDataRepository::initClient, this);
             
-            _connection.connect(_connectionString);
+            this->_connection.connect(this->_connectionString);
             return dbCall();
         } catch(const mongo::DBException &e) {
             throw "Mongo ex";
