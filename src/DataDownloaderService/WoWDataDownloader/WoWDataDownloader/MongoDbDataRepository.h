@@ -22,7 +22,7 @@ private:
     mongo::DBClientConnection _connection;
     
     void initClient() {
-        auto initResult = mongo::client::initialize();
+        mongo::Status initResult = mongo::client::initialize();
         if(!initResult.isOK()) {
             throw "Unable to init mongo client";
         }
