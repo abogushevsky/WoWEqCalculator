@@ -7,6 +7,7 @@
 //
 
 #include "MongoDbDataRepository.h"
+#include "MongoHelpers.h"
 
 using namespace std;
 
@@ -24,7 +25,8 @@ MongoDbDataRepository::MongoDbDataRepository(const string &connectionString) {
 }
 
 void MongoDbDataRepository::saveItem(Item &item) {
-    auto result = wrapDbCall<int>([] () {
+    auto result = wrapDbCall<int>([&item]() -> int {
+        BSONObj itemBson = itemToBson(item);
         return 1;
     });
 }
