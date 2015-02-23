@@ -209,9 +209,17 @@
 			path = WoWDataDownloader;
 			sourceTree = "<group>";
 		};
+		2C4025451A9B83FD007EDE05 /* MongoHelpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = MongoHelpers;
+			sourceTree = "<group>";
+		};
 		2C869B9A1A51ECF3004E4722 /* Impl */ = {
 			isa = PBXGroup;
 			children = (
+				2C4025451A9B83FD007EDE05 /* MongoHelpers */,
 				2C619DC11A5329D0006C1222 /* RestClient.cpp */,
 				2C619DC21A5329D0006C1222 /* RestClient.h */,
 				2CDD47DA1A51EE85008F1097 /* BNetApiDataLoader.cpp */,

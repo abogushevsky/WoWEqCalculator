@@ -29,6 +29,10 @@ void MongoDbDataRepository::saveItem(Item &item) {
     });
 }
 
+void MongoDbDataRepository::saveItems(std::vector<Item> &items) {
+    
+}
+
 void MongoDbDataRepository::saveItemClass(ItemClass &itemClass) {
     
 }

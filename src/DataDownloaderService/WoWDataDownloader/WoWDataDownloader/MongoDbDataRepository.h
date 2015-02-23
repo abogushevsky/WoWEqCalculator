@@ -43,6 +43,7 @@ public:
     MongoDbDataRepository(const std::string &connectionString);
     ~MongoDbDataRepository() {};
     void saveItem(Item& item);
+    void saveItems(std::vector<Item>& items);
     void saveItemClass(ItemClass& itemClass);
 };
 
