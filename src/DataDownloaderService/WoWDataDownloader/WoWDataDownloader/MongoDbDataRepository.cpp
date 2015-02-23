@@ -25,7 +25,7 @@ MongoDbDataRepository::MongoDbDataRepository(const string &connectionString) {
 }
 
 void MongoDbDataRepository::saveItem(Item &item) {
-    auto result = wrapDbCall<int>([&item]() -> int {
+    auto result = wrapDbCall<int>([&]() {
         BSONObj itemBson = itemToBson(item);
         return 1;
     });
