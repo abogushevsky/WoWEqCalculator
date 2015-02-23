@@ -25,8 +25,9 @@ MongoDbDataRepository::MongoDbDataRepository(const string &connectionString) {
 }
 
 void MongoDbDataRepository::saveItem(Item &item) {
-    int result = wrapDbCall<int>([&]() {
+    int result = wrapDbCall<int>([&](mongo::DBClientConnection connection) {
         BSONObj itemBson = itemToBson(item);
+        connection.insert("items", itemBson);
         return 1;
     });
 }
