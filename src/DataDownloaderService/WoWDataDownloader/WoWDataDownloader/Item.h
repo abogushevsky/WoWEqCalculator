@@ -39,7 +39,7 @@ struct Item {
     int maxDurability;
     int nameDescriptionColor;
     int requiredLevel;
-    int requiredScill;
+    int requiredSkill;
     bool stackable;
     bool upgradable;
     std::string icon;

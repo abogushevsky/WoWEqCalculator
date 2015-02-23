@@ -44,7 +44,7 @@ Item* BoostJsonParser::parseItem(const std::string& json) {
         result->name = propTree.get<string>("name");
         result->nameDescriptionColor = propTree.get<int>("nameDescriptionColor");
         result->requiredLevel = propTree.get<int>("requiredLevel");
-        result->requiredScill = propTree.get<int>("requiredSkill");
+        result->requiredSkill = propTree.get<int>("requiredSkill");
         result->stackable = propTree.get<bool>("stackable");
         result->upgradable = propTree.get<bool>("upgradable");
         result->weaponInfo = parseWeaponInfo(prop);

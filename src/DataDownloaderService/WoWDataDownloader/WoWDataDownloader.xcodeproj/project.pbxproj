@@ -90,6 +90,7 @@
 		2C2DF9E61A49F85F005E6547 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		2C3827221A6BFEC3004FBDBB /* libboost_random.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_random.dylib; path = ../../../../../Development/CPP/libs/lib/libboost_random.dylib; sourceTree = "<group>"; };
 		2C3827231A6BFEC3004FBDBB /* libboost_system.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_system.dylib; path = ../../../../../Development/CPP/libs/lib/libboost_system.dylib; sourceTree = "<group>"; };
+		2C4025481A9B85B3007EDE05 /* MongoHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MongoHelpers.h; sourceTree = "<group>"; };
 		2C53FDCD1A6288EC00DEC287 /* RequestResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestResult.h; sourceTree = "<group>"; };
 		2C53FDCE1A6298EC00DEC287 /* IJsonParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IJsonParser.h; sourceTree = "<group>"; };
 		2C53FDCF1A62998900DEC287 /* BoostJsonParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BoostJsonParser.cpp; sourceTree = "<group>"; };
@@ -212,6 +213,7 @@
 		2C4025451A9B83FD007EDE05 /* MongoHelpers */ = {
 			isa = PBXGroup;
 			children = (
+				2C4025481A9B85B3007EDE05 /* MongoHelpers.h */,
 			);
 			name = MongoHelpers;
 			sourceTree = "<group>";
