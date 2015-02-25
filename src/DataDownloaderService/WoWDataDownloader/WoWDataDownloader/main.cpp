@@ -27,14 +27,14 @@ void run() {
 }
 
 int main(int argc, const char * argv[]) {
-    mongo::client::initialize();
+    /*mongo::client::initialize();
     try {
         run();
         std::cout << "connected ok" << std::endl;
     } catch( const mongo::DBException &e ) {
         std::cout << "caught " << e.what() << std::endl;
     }
-    return EXIT_SUCCESS;
+    return EXIT_SUCCESS;*/
     
     // insert code here...
     //std::cout << "Hello, World!\n";
@@ -68,7 +68,7 @@ int main(int argc, const char * argv[]) {
     //loader->loadRealms();
     
     try {
-        loader->loadItems(10000, 10001);
+        loader->loadItems(10000, 10100);
     }
     catch (exception &ex) {
         cerr << &ex;

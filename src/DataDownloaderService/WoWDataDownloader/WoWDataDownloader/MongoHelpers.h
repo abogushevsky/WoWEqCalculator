@@ -62,7 +62,11 @@ inline mongo::BSONObj itemToBson(const Item& item) {
     builder.append("stackable", item.stackable);
     builder.append("upgradable", item.upgradable);
     builder.append("icon", item.icon);
-    builder.append("weaponInfo", weaponInfoToBson(*item.weaponInfo));
+    if (item.weaponInfo) {
+        builder.append("weaponInfo", weaponInfoToBson(*item.weaponInfo));
+    } else {
+        builder.appendNull("weaponInfo");
+    }
     
     return builder.obj();
 }

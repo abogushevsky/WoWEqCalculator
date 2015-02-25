@@ -28,7 +28,7 @@ private:
         }
     }
     template<typename TResult>
-    inline TResult wrapDbCall(const std::function<TResult(mongo::DBClientConnection connection)>& dbCall) {
+    inline TResult wrapDbCall(const std::function<TResult(mongo::DBClientConnection &connection)>& dbCall) {
         try {
             std::call_once(this->_initFlag, &MongoDbDataRepository::initClient, this);
             

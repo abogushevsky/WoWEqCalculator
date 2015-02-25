@@ -6,13 +6,15 @@
 //  Copyright (c) 2015 Anton Bogushevsky. All rights reserved.
 //
 
+#include <iostream>
+
 #include "MongoDbDataRepository.h"
 #include "MongoHelpers.h"
 
 using namespace std;
 
 IWowDataRepository::~IWowDataRepository() {
-    
+    mongo::client::shutdown();
 }
 
 MongoDbDataRepository::MongoDbDataRepository(const string &connectionString) {
@@ -21,14 +23,16 @@ MongoDbDataRepository::MongoDbDataRepository(const string &connectionString) {
     }
     
     this->_connectionString = connectionString;
-    mongo::client::initialize();
+    //mongo::client::initialize();
 }
 
 void MongoDbDataRepository::saveItem(Item &item) {
-    int result = wrapDbCall<int>([&](mongo::DBClientConnection connection) {
+    wrapDbCall<int>([&](mongo::DBClientConnection &connection) -> int {
+        int result = 1;
         BSONObj itemBson = itemToBson(item);
-        connection.insert("items", itemBson);
-        return 1;
+        connection.insert("WowDb.items", itemBson);
+        cout << "Object inserted";
+        return result;
     });
 }
 
