@@ -31,7 +31,6 @@ void MongoDbDataRepository::saveItem(Item &item) {
         int result = 1;
         BSONObj itemBson = itemToBson(item);
         connection.insert("WowDb.items", itemBson);
-        cout << "Object inserted";
         return result;
     });
 }

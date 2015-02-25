@@ -47,7 +47,7 @@ Item* BoostJsonParser::parseItem(const std::string& json) {
         result->requiredSkill = propTree.get<int>("requiredSkill");
         result->stackable = propTree.get<bool>("stackable");
         result->upgradable = propTree.get<bool>("upgradable");
-        result->weaponInfo = parseWeaponInfo(prop);
+        result->weaponInfo = parseWeaponInfo(propTree);
     }
     
     return result;
@@ -68,21 +68,24 @@ vector<DictionaryItem> BoostJsonParser::parseBonusStats(const std::string &json)
 WeaponInfo* BoostJsonParser::parseWeaponInfo(boost::property_tree::ptree& propTree) {
     try {
         WeaponInfo* result = new WeaponInfo();
-        auto prop = propTree.get_child("weaponInfo");
-        if(!prop.empty()) {
-            auto damageProp = prop.get_child("damage");
+        auto prop = propTree.get_child_optional("weaponInfo");
+        if(prop && !prop->empty()) {
+            auto damageProp = prop->get_child("damage");
             if(!damageProp.empty()) {
                 result->damageExactMax = damageProp.get<float>("exactMax");
                 result->damageExactMin = damageProp.get<float>("exactMin");
                 result->damageMax = damageProp.get<float>("max");
                 result->damageMin = damageProp.get<float>("min");
             }
-            result->dps = prop.get<float>("dps");
-            result->speed = prop.get<float>("weaponSpeed");
+            result->dps = prop->get<float>("dps");
+            result->speed = prop->get<float>("weaponSpeed");
             return result;
         }
+        else {
+            cout << "Weapon info is empty" << endl;
+        }
     }
-    catch(exception ex) {
+    catch(exception &ex) {
         cerr << "Error parsing weapon info: " << &ex << endl;
     }
     

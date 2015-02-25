@@ -68,7 +68,7 @@ int main(int argc, const char * argv[]) {
     //loader->loadRealms();
     
     try {
-        loader->loadItems(10000, 10100);
+        loader->loadItems(10000, 40000);
     }
     catch (exception &ex) {
         cerr << &ex;
