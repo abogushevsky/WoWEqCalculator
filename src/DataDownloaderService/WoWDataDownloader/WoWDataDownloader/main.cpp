@@ -69,8 +69,12 @@ int main(int argc, const char * argv[]) {
     //loader->loadRealms();
     
     try {
-        BatchLoadResult res = loader->loadItems(10000, 10100);
-        cout << endl << "Items load completed. Total loaded: " << res.totalLoaded << ". Total failed: " << res.totalFailed << endl;
+        int i = 10000;
+        while(i < 20000) {
+            BatchLoadResult res = loader->loadItems(i, i + 30);
+            cout << endl << "Items load completed. Total loaded: " << res.totalLoaded << ". Total failed: " << res.totalFailed << endl;
+            i += 30;
+        }
     }
     catch (exception &ex) {
         cerr << &ex;

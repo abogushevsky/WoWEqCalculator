@@ -25,6 +25,8 @@ private:
         mongo::Status initResult = mongo::client::initialize();
         if(!initResult.isOK()) {
             throw "Unable to init mongo client";
+        } else {
+            this->_connection.connect(this->_connectionString);
         }
     }
     template<typename TResult>
@@ -32,7 +34,7 @@ private:
         try {
             std::call_once(this->_initFlag, &MongoDbDataRepository::initClient, this);
             
-            this->_connection.connect(this->_connectionString);
+            
             return dbCall(this->_connection);
         } catch(const mongo::DBException &e) {
             throw "Mongo ex";
