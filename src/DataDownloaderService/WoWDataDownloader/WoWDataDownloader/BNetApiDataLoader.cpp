@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include <future>
 #include "BNetApiDataLoader.h"
 
 using namespace std;
@@ -45,24 +46,42 @@ void BNetApiDataLoader::loadRealms() {
 
 BatchLoadResult BNetApiDataLoader::loadItems(int fromId, int toId) {
     BatchLoadResult result;
+    vector<future<ItemLoadResult>> futures;
     
     for (int i = fromId; i <= toId; i++) {
-        string url = ITEM_INFO_URL + to_string(i);
-        RequestResult* itemResult = this->_webClient->get(url);
-        if (itemResult) {
-            try {
-                Item* item = this->_jsonParser->parseItem(*itemResult->content);
-                this->_dataRepository->saveItem(*item);
-                this->writeSucceededToResult(i, result);
-                delete(item);
-            } catch (exception ex) {
-                cerr << &ex;
-                this->writeFailedToResult(i, result);
+        futures.push_back(async([=](int i) -> ItemLoadResult {
+            ItemLoadResult loadRes;
+            loadRes.id = i;
+            string url = ITEM_INFO_URL + to_string(i);
+            RequestResult* itemResult = this->_webClient->get(url);
+            if (itemResult) {
+                try {
+                    Item* item = this->_jsonParser->parseItem(*itemResult->content);
+                    this->_dataRepository->saveItem(*item);
+                    //this->writeSucceededToResult(i, result);
+                    loadRes.succeeded = true;
+                    delete(item);
+                } catch (exception ex) {
+                    cerr << &ex;
+                    //this->writeFailedToResult(i, result);
+                    loadRes.succeeded = false;
+                }
+            
+                delete(itemResult);
             }
             
-            delete(itemResult);
-        }
+            return loadRes;
+        }, i));
     }
+    
+    /*for (int i = 0; i < futures.size(); i++) {
+        ItemLoadResult loadRes = futures[i].get();
+        if (loadRes.succeeded) {
+            this->writeSucceededToResult(loadRes.id, result);
+        } else {
+            this->writeFailedToResult(loadRes.id, result);
+        }
+    }*/
     
     return result;
 }

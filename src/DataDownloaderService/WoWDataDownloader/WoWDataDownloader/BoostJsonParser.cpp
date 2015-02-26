@@ -82,7 +82,7 @@ WeaponInfo* BoostJsonParser::parseWeaponInfo(boost::property_tree::ptree& propTr
             return result;
         }
         else {
-            cout << "Weapon info is empty" << endl;
+           // cout << "Weapon info is empty" << endl;
         }
     }
     catch(exception &ex) {

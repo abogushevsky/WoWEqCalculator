@@ -15,6 +15,11 @@
 #include "IJsonParser.h"
 #include "IWowDataRepository.h"
 
+struct ItemLoadResult {
+    int id;
+    bool succeeded;
+};
+
 class BNetApiDataLoader : public IDataLoader {
 private:
     const std::string REALMS_LIST_URL = "eu.battle.net/api/wow/realm/status";

@@ -9,6 +9,7 @@
 #include <iostream>
 #include <string>
 #include "Item.h"
+#include "BatchLoadResult.h"
 #include "Realm.h"
 #include "IDataLoader.h"
 #include "BNetApiDataLoader.h"
@@ -68,7 +69,8 @@ int main(int argc, const char * argv[]) {
     //loader->loadRealms();
     
     try {
-        loader->loadItems(10000, 40000);
+        BatchLoadResult res = loader->loadItems(10000, 10100);
+        cout << endl << "Items load completed. Total loaded: " << res.totalLoaded << ". Total failed: " << res.totalFailed << endl;
     }
     catch (exception &ex) {
         cerr << &ex;
