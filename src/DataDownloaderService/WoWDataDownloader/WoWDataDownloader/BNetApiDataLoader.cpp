@@ -49,7 +49,7 @@ BatchLoadResult BNetApiDataLoader::loadItems(int fromId, int toId) {
     vector<future<ItemLoadResult>> futures;
     
     for (int i = fromId; i <= toId; i++) {
-        futures.push_back(async([=](int i) -> ItemLoadResult {
+        futures.push_back(async([&](int i) -> ItemLoadResult {
             ItemLoadResult loadRes;
             loadRes.id = i;
             string url = ITEM_INFO_URL + to_string(i);
@@ -74,14 +74,14 @@ BatchLoadResult BNetApiDataLoader::loadItems(int fromId, int toId) {
         }, i));
     }
     
-    /*for (int i = 0; i < futures.size(); i++) {
+    for (int i = 0; i < futures.size(); i++) {
         ItemLoadResult loadRes = futures[i].get();
         if (loadRes.succeeded) {
             this->writeSucceededToResult(loadRes.id, result);
         } else {
             this->writeFailedToResult(loadRes.id, result);
         }
-    }*/
+    }
     
     return result;
 }
