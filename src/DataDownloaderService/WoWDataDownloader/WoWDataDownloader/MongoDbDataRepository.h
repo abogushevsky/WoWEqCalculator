@@ -29,12 +29,11 @@ private:
             this->_connection.connect(this->_connectionString);
         }
     }
+    
     template<typename TResult>
     inline TResult wrapDbCall(const std::function<TResult(mongo::DBClientConnection &connection)>& dbCall) {
         try {
             std::call_once(this->_initFlag, &MongoDbDataRepository::initClient, this);
-            
-            
             return dbCall(this->_connection);
         } catch(const mongo::DBException &e) {
             throw "Mongo ex";
