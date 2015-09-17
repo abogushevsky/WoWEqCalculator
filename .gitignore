@@ -64,6 +64,7 @@ src/Android/.idea/workspace.xml
 *.suo
 *.user
 *.sln.docstates
+packages/
 
 # Build results
 
